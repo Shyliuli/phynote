@@ -1,0 +1,1557 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp001"
+      ],
+      "sourcePage": 1,
+      "content": "在真空中，点电荷 q 在距离 r 处产生的电场强度大小 E 为：",
+      "options": [
+        "A. E = (1/4π ε0)·(q/r)",
+        "B. E = (1/4π ε0)·(q/r²)",
+        "C. E = (1/4π ε0)·(q²/r²)",
+        "D. E = (1/4π ε0)·(q/r³)"
+      ],
+      "answer": "B",
+      "explanation": "点电荷电场强度大小为 E=(1/4π ε0)·(q/r²)，方向沿径向（正电荷向外、负电荷向内）。"
+    },
+    {
+      "id": "q002",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 3,
+      "content": "两个等量点电荷 +q 分别位于 x=+a 与 x=-a 处，则原点 O 处的电场强度为：",
+      "options": [
+        "A. E=0",
+        "B. 方向沿 +x，大小为 2kq/a²",
+        "C. 方向沿 -x，大小为 2kq/a²",
+        "D. 方向沿 +x，大小为 kq/a²（k=1/4π ε0）"
+      ],
+      "answer": "A",
+      "explanation": "两电荷在原点处产生的电场大小相等、方向相反（一个指向+x，一个指向-x），矢量叠加后相互抵消，故E=0。"
+    },
+    {
+      "id": "q003",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp005",
+        "kp004"
+      ],
+      "sourcePage": 9,
+      "content": "下列哪种电荷分布最适合用高斯定理（选取合适高斯面后可直接解出 E 的大小）？",
+      "options": [
+        "A. 有限长、形状不规则且电荷密度不均匀的带电导线",
+        "B. 无限长、均匀带电的直线（线电荷密度为常数）",
+        "C. 两个不等量点电荷的叠加场",
+        "D. 任意形状的有限带电薄片"
+      ],
+      "answer": "B",
+      "explanation": "无限长均匀带电直线具有柱对称性，可选同轴圆柱面作高斯面，使E在侧面恒定并可提出积分号，从而直接求解。"
+    },
+    {
+      "id": "q004",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp006"
+      ],
+      "sourcePage": 11,
+      "content": "无限长均匀带电实心圆柱半径为 R，单位长度所带总电荷为 λ，且电荷均匀分布在圆柱体积内。柱内距轴线 r (r<R) 处电场强度大小 E(r) 为：",
+      "options": [
+        "A. E(r)=λ/(2π ε0 r)",
+        "B. E(r)=λr/(2π ε0 R²)",
+        "C. E(r)=λ/(2π ε0 R)",
+        "D. E(r)=0"
+      ],
+      "answer": "B",
+      "explanation": "取半径r、长度L的同轴高斯圆柱面：通量为E·(2πrL)，包围电荷为λL·(r²/R²)。由∮E·dS=q内/ε0得E·2πrL=(λL r²/R²)/ε0，解得E=λr/(2π ε0 R²)。"
+    },
+    {
+      "id": "q005",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 3,
+      "content": "多个点电荷产生的总电场等于各电荷产生电场的矢量和。",
+      "answer": "对",
+      "explanation": "电场满足线性叠加原理，总电场需按矢量方式合成，不能直接相加大小。"
+    },
+    {
+      "id": "q006",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp004"
+      ],
+      "sourcePage": 7,
+      "content": "通过任意闭合曲面的电通量只与曲面内包围的总电荷有关，与曲面形状无关。",
+      "answer": "对",
+      "explanation": "高斯定理给出∮E·dS=q内/ε0；在同一包围电荷下，改变闭合曲面形状不会改变总通量。"
+    },
+    {
+      "id": "q007",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp008"
+      ],
+      "sourcePage": 13,
+      "content": "取无穷远为零电势，在真空中点电荷 q 在距离 r 处产生的电势 V 为：",
+      "options": [
+        "A. V = (1/4π ε0)·(q/r)",
+        "B. V = (1/4π ε0)·(q/r²)",
+        "C. V = q/(ε0 r)",
+        "D. V = (1/4π)·(q/r)"
+      ],
+      "answer": "A",
+      "explanation": "点电荷电势为V=(1/4π ε0)·(q/r)，电势是标量，可按代数叠加。"
+    },
+    {
+      "id": "q008",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp008"
+      ],
+      "sourcePage": 13,
+      "content": "两点电荷 +q 与 -q 到某点 P 的距离相等且均为 r，则点 P 的电势 V 为：",
+      "options": [
+        "A. 0",
+        "B. (1/4π ε0)·(q/r)",
+        "C. -(1/4π ε0)·(q/r)",
+        "D. (1/4π ε0)·(2q/r)"
+      ],
+      "answer": "A",
+      "explanation": "电势是标量，V=V(+q)+V(-q)=(kq/r)+(-kq/r)=0。"
+    },
+    {
+      "id": "q009",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp011"
+      ],
+      "sourcePage": 18,
+      "content": "若某区域电势 V 随 x 增大而单调减小，则电场分量 Ex 的方向为：",
+      "options": [
+        "A. 指向 +x",
+        "B. 指向 -x",
+        "C. 与 x 无关，Ex=0",
+        "D. 方向不确定"
+      ],
+      "answer": "A",
+      "explanation": "Ex=-∂V/∂x。若V随x增大而减小，则∂V/∂x<0，故Ex>0，方向指向+x。"
+    },
+    {
+      "id": "q010",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp007",
+        "kp008"
+      ],
+      "sourcePage": 12,
+      "content": "在同一静电场中，已知 VA > VB。下列关于电子（q=-e）从A运动到B的说法正确的是：",
+      "options": [
+        "A. 电子电势能增加，电场力对电子做负功",
+        "B. 电子电势能减少，电场力对电子做正功",
+        "C. 电子电势能增加，电场力对电子做正功",
+        "D. 电子将自发从A向B运动"
+      ],
+      "answer": "A",
+      "explanation": "电势能U=qV。对电子q=-e，若VA>VB，则UA=-eVA<UB=-eVB，故从A到B电势能增加(ΔU>0)。电场力做功W=-ΔU<0，为负功；电子更倾向从低电势向高电势运动。"
+    },
+    {
+      "id": "q011",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp007"
+      ],
+      "sourcePage": 12,
+      "content": "静电场中电场力做功与路径无关，因此可以定义电势。",
+      "answer": "对",
+      "explanation": "静电场为保守场，闭合回路做功为零（∮E·dl=0），电势差只与起终点有关。"
+    },
+    {
+      "id": "q012",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp011"
+      ],
+      "sourcePage": 18,
+      "content": "电场方向总是指向电势升高最快的方向。",
+      "answer": "错",
+      "explanation": "电场满足E=-∇V，方向指向电势下降最快的方向（负梯度方向）。"
+    },
+    {
+      "id": "q013",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp012"
+      ],
+      "sourcePage": 19,
+      "content": "静电平衡时，导体内部的电场强度为：",
+      "options": [
+        "A. 0",
+        "B. 与位置成正比",
+        "C. 与表面电荷密度成正比",
+        "D. 取决于导体材料"
+      ],
+      "answer": "A",
+      "explanation": "若导体内部存在电场，自由电荷会持续运动，无法达到静电平衡；因此平衡时导体内部E=0。"
+    },
+    {
+      "id": "q014",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp013"
+      ],
+      "sourcePage": 20,
+      "content": "在真空/空气中，静电平衡下导体表面外侧的电场强度大小 E 与面电荷密度 σ 的关系为：",
+      "options": [
+        "A. E=σ/ε0",
+        "B. E=σ/(2ε0)",
+        "C. E=2σ/ε0",
+        "D. E=0"
+      ],
+      "answer": "A",
+      "explanation": "导体表面只向外“发出”场线，边界条件给出外侧法向场强E=σ/ε0（与无限大均匀带电平面的σ/2ε0不同）。"
+    },
+    {
+      "id": "q015",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp014"
+      ],
+      "sourcePage": 21,
+      "content": "关于闭合导体壳的静电屏蔽，下列说法正确的是：",
+      "options": [
+        "A. 外部电场一定能进入壳内并在壳内产生同样大小的电场",
+        "B. 壳内放置电荷时，壳外空间完全感受不到任何电场",
+        "C. 静电平衡时外部电场不影响壳内电场分布（壳内可保持E≈0）",
+        "D. 导体壳是否闭合与屏蔽效果无关"
+      ],
+      "answer": "C",
+      "explanation": "闭合导体壳在静电平衡时可使壳内区域电场近似为零，从而屏蔽外部电场影响；若壳内有电荷，则壳外是否有场取决于外表面感应电荷及是否接地。"
+    },
+    {
+      "id": "q016",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp017"
+      ],
+      "sourcePage": 24,
+      "content": "在充满均匀电介质(εr)的平行板结构中，若两板上的自由面电荷密度为 σ_free（忽略边缘效应），则板间位移矢量 D 的大小为：",
+      "options": [
+        "A. D=σ_free/ε0",
+        "B. D=σ_free",
+        "C. D=ε0·σ_free",
+        "D. D=σ_free/εr"
+      ],
+      "answer": "B",
+      "explanation": "电介质中高斯定理对D写作∮D·dS=Q_free，因此平行板间法向D的大小直接等于自由面电荷密度：D=σ_free。"
+    },
+    {
+      "id": "q017",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp014"
+      ],
+      "sourcePage": 21,
+      "content": "导体在静电平衡时是等势体。",
+      "answer": "对",
+      "explanation": "导体内部E=0，沿任意路径移动电荷电场力做功为零，因此电势处处相同。"
+    },
+    {
+      "id": "q018",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp014"
+      ],
+      "sourcePage": 21,
+      "content": "将导体壳接地后，可屏蔽壳内电荷对壳外空间电场的影响。",
+      "answer": "对",
+      "explanation": "接地允许外表面电荷与大地交换，使外表面可不再带净电荷，从而在壳外的高斯面包围净电荷为零，壳外电场可消失。"
+    },
+    {
+      "id": "q019",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp018"
+      ],
+      "sourcePage": 25,
+      "content": "电容器的电容 C 的定义式为：",
+      "options": [
+        "A. C=U/Q",
+        "B. C=Q/U",
+        "C. C=QU",
+        "D. C=Q²/U"
+      ],
+      "answer": "B",
+      "explanation": "电容器电容定义为C=Q/U，其中U为两极板间电势差。"
+    },
+    {
+      "id": "q020",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp019"
+      ],
+      "sourcePage": 26,
+      "content": "面积为 S、板间距为 d 的平行板电容器完全填充介质(εr)后，其电容 C 为：",
+      "options": [
+        "A. C=ε0S/d",
+        "B. C=ε0εrS/d",
+        "C. C=ε0d/S",
+        "D. C=εr d/(ε0S)"
+      ],
+      "answer": "B",
+      "explanation": "完全填充介质时等效介电常数变为ε0εr，故C=ε0εrS/d。"
+    },
+    {
+      "id": "q021",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp020"
+      ],
+      "sourcePage": 27,
+      "content": "电容器储存的电场能量 W 的表达式正确的是：",
+      "options": [
+        "A. W=CU²",
+        "B. W=½CU²",
+        "C. W=QU",
+        "D. W=½Q²C"
+      ],
+      "answer": "B",
+      "explanation": "电容器能量W=½CU²=½QU=Q²/(2C)，注意有½因子。"
+    },
+    {
+      "id": "q022",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp019",
+        "kp020"
+      ],
+      "sourcePage": 26,
+      "content": "平行板电容器与理想电源相连（电压 U 恒定）。若将介质(εr>1)完全插入极板间（忽略边缘效应），电容器储能 W 将：",
+      "options": [
+        "A. 增大",
+        "B. 减小",
+        "C. 不变",
+        "D. 无法判断"
+      ],
+      "answer": "A",
+      "explanation": "电源保持U恒定时，W=½CU²。插入介质使C增大，因此W增大（能量来自电源做功）。"
+    },
+    {
+      "id": "q023",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp018"
+      ],
+      "sourcePage": 25,
+      "content": "在给定几何结构与介质条件下，电容与电容器所带电荷量无关。",
+      "answer": "对",
+      "explanation": "在线性介质近似下，C只由结构与材料决定，与Q或U的取值无关。"
+    },
+    {
+      "id": "q024",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp021"
+      ],
+      "sourcePage": 28,
+      "content": "在线性电介质中，电场能量密度可以写为 we = ½DE。",
+      "answer": "对",
+      "explanation": "线性介质中we=½εE²，且D=εE，因此可等价写为we=½DE。"
+    },
+    {
+      "id": "q025",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp023"
+      ],
+      "sourcePage": 30,
+      "content": "载流无限长直导线在距离导线 r 处产生的磁感应强度大小 B 为：",
+      "options": [
+        "A. B=μ0I/(2πr)",
+        "B. B=μ0I/(4πr²)",
+        "C. B=μ0Ir/(2π)",
+        "D. B=μ0I/(2r)"
+      ],
+      "answer": "A",
+      "explanation": "无限长直导线周围磁场B=μ0I/(2πr)，方向沿绕导线的同心圆。"
+    },
+    {
+      "id": "q026",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp022"
+      ],
+      "sourcePage": 29,
+      "content": "在毕奥-萨伐尔定律中，磁场微元 dB 的方向由下列哪项决定？",
+      "options": [
+        "A. 总与电流元 dl 平行",
+        "B. 总与 r̂ 平行",
+        "C. 与 dl 和 r̂ 所在平面垂直，方向由 dl×r̂ 决定",
+        "D. 永远指向电流方向"
+      ],
+      "answer": "C",
+      "explanation": "毕奥-萨伐尔定律为矢量形式dB∝I(dl×r̂)/r²，方向由叉乘dl×r̂确定。"
+    },
+    {
+      "id": "q027",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp024"
+      ],
+      "sourcePage": 31,
+      "content": "半径为 R 的圆形电流回路（电流为 I）在圆心处产生的磁感应强度大小 B 为：",
+      "options": [
+        "A. B=μ0I/(2R)",
+        "B. B=μ0I/(2πR)",
+        "C. B=μ0I/(4πR)",
+        "D. B=μ0IR/2"
+      ],
+      "answer": "A",
+      "explanation": "圆形电流回路圆心处磁场B=μ0I/(2R)，方向沿回路轴线由右手定则判断。"
+    },
+    {
+      "id": "q028",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp026"
+      ],
+      "sourcePage": 33,
+      "content": "关于用安培环路定理直接求磁场大小的条件，下列说法正确的是：",
+      "options": [
+        "A. 只要存在电流就能直接求出任意点B的大小",
+        "B. 必须选择使B在积分路径上处处与dl垂直",
+        "C. 只要选择闭合路径，B一定可以提出积分号",
+        "D. 只有当对称性使B在所选闭合路径上大小恒定且方向与dl平行（或夹角恒定）时，才能化线积分为乘法求B"
+      ],
+      "answer": "D",
+      "explanation": "安培环路定理始终成立，但只有在高对称情形下才能把∮B·dl简化为B·L而直接解出B的分布。"
+    },
+    {
+      "id": "q029",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp023"
+      ],
+      "sourcePage": 30,
+      "content": "无限长直导线周围的磁力线是以导线为中心的同心圆。",
+      "answer": "对",
+      "explanation": "直导线产生的磁场方向环绕导线，磁力线为同心圆，方向由右手定则确定。"
+    },
+    {
+      "id": "q030",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp026"
+      ],
+      "sourcePage": 33,
+      "content": "安培环路定理是线积分，而电场高斯定理是面积分。",
+      "answer": "对",
+      "explanation": "安培定理为∮B·dl=μ0Ienc（线积分）；电场高斯定理为∮E·dS=q内/ε0（面积分）。"
+    },
+    {
+      "id": "q031",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp027"
+      ],
+      "sourcePage": 34,
+      "content": "均匀磁场 B 穿过面积为 S 的平面，磁场与平面法向夹角为 θ，则磁通量 ΦB 为：",
+      "options": [
+        "A. ΦB=BS",
+        "B. ΦB=BS cosθ",
+        "C. ΦB=B/S",
+        "D. ΦB=B cosθ/S"
+      ],
+      "answer": "B",
+      "explanation": "磁通量定义为ΦB=∬B·dS；对均匀场与平面，有ΦB=BS cosθ。"
+    },
+    {
+      "id": "q032",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp028"
+      ],
+      "sourcePage": 35,
+      "content": "磁场高斯定理 ∮B·dS = 0 的直接物理含义是：",
+      "options": [
+        "A. 磁力线可从正磁荷发出、终止于负磁荷",
+        "B. 不存在磁单极子，磁场无源无汇",
+        "C. 任意区域磁场一定为零",
+        "D. 磁通量总与时间无关"
+      ],
+      "answer": "B",
+      "explanation": "闭合面总磁通量为零意味着磁力线没有起点和终点（不存在磁单极子），磁力线总是闭合的。"
+    },
+    {
+      "id": "q033",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp029"
+      ],
+      "sourcePage": 36,
+      "content": "将一根条形磁铁从中间切开，会得到：",
+      "options": [
+        "A. 一个只剩N极的磁体和一个只剩S极的磁体",
+        "B. 两根更小的磁铁，每根仍同时具有N、S两极",
+        "C. 磁性消失",
+        "D. 得到一个磁单极子"
+      ],
+      "answer": "B",
+      "explanation": "切开磁体不会产生孤立磁极，而是得到两个更小的N-S对，体现磁力线闭合与无磁单极子。"
+    },
+    {
+      "id": "q034",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp028"
+      ],
+      "sourcePage": 35,
+      "content": "磁场高斯定理对应的微分形式是：",
+      "options": [
+        "A. ∇·B=ρ/ε0",
+        "B. ∇×B=0",
+        "C. ∇·B=0",
+        "D. ∇×B=μ0J"
+      ],
+      "answer": "C",
+      "explanation": "∮B·dS=0对应散度为零的局域表述，即∇·B=0。"
+    },
+    {
+      "id": "q035",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp027"
+      ],
+      "sourcePage": 34,
+      "content": "在均匀磁场中，若平面与磁场方向垂直（即平面法向与B平行），则该平面上的磁通量最大。",
+      "answer": "对",
+      "explanation": "ΦB=BS cosθ，θ为B与法向夹角；当θ=0时cosθ=1，磁通量最大。"
+    },
+    {
+      "id": "q036",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp028"
+      ],
+      "sourcePage": 35,
+      "content": "由于闭合曲面的总磁通量为零，所以磁力线不可能穿过闭合曲面。",
+      "answer": "错",
+      "explanation": "磁力线可以穿出闭合曲面也可以再穿入，闭合面总通量为零仅说明“穿出量=穿入量”的代数和为零。"
+    },
+    {
+      "id": "q037",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp031"
+      ],
+      "sourcePage": 38,
+      "content": "当带电粒子速度 v 与匀强磁场 B 垂直时，其运动轨迹最可能是：",
+      "options": [
+        "A. 直线",
+        "B. 匀速圆周",
+        "C. 匀加速直线",
+        "D. 抛物线"
+      ],
+      "answer": "B",
+      "explanation": "v⊥B时，洛伦兹力始终垂直于速度并提供向心力，粒子做匀速圆周运动。"
+    },
+    {
+      "id": "q038",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp031"
+      ],
+      "sourcePage": 38,
+      "content": "带电粒子在匀强磁场中做圆周运动，其回旋半径 R 为：",
+      "options": [
+        "A. R=mv/(|q|B)",
+        "B. R=|q|B/(mv)",
+        "C. R=mv/|q|",
+        "D. R=|q|/(mB)"
+      ],
+      "answer": "A",
+      "explanation": "向心力由磁场力提供：|q|vB=mv²/R，解得R=mv/(|q|B)。"
+    },
+    {
+      "id": "q039",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp032"
+      ],
+      "sourcePage": 39,
+      "content": "长度为 L 的直导线通以电流 I，置于匀强磁场 B 中，与B夹角为 α，则其受安培力大小 F 为：",
+      "options": [
+        "A. F=BIL",
+        "B. F=BIL cosα",
+        "C. F=BIL sinα",
+        "D. F=BI/L"
+      ],
+      "answer": "C",
+      "explanation": "直导线在均匀磁场中的受力大小为F=BIL sinα，方向由左手定则判定。"
+    },
+    {
+      "id": "q040",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp033"
+      ],
+      "sourcePage": 40,
+      "content": "面积为 S 的单匝线圈通以电流 I，置于匀强磁场 B 中，线圈法向与B夹角为 θ，则磁力矩大小 M 为：",
+      "options": [
+        "A. M=ISB cosθ",
+        "B. M=ISB sinθ",
+        "C. M=IS/B",
+        "D. M=B/S"
+      ],
+      "answer": "B",
+      "explanation": "线圈磁矩pm=IS n̂，力矩M=pm×B，大小M=ISB sinθ。"
+    },
+    {
+      "id": "q041",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp030"
+      ],
+      "sourcePage": 37,
+      "content": "洛伦兹力始终垂直于速度方向，因此对带电粒子不做功。",
+      "answer": "对",
+      "explanation": "F=qv×B与v垂直，瞬时功率P=F·v=0，因此磁场力不改变粒子速率，只改变方向。"
+    },
+    {
+      "id": "q042",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp033"
+      ],
+      "sourcePage": 40,
+      "content": "当线圈磁矩与外磁场方向平行时，线圈所受磁力矩最大。",
+      "answer": "错",
+      "explanation": "力矩大小M=ISB sinθ，当θ=0（平行）时sinθ=0，力矩为零；θ=90°时力矩最大。"
+    },
+    {
+      "id": "q043",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp035"
+      ],
+      "sourcePage": 42,
+      "content": "在线性各向同性磁介质中，磁感应强度 B 与磁场强度 H 的关系为：",
+      "options": [
+        "A. B=μ0H",
+        "B. B=μ0μrH",
+        "C. B=ε0εrH",
+        "D. B=H/μ0"
+      ],
+      "answer": "B",
+      "explanation": "线性介质中B=μ0μrH，μr为相对磁导率；真空中μr=1。"
+    },
+    {
+      "id": "q044",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp036"
+      ],
+      "sourcePage": 43,
+      "content": "磁介质中安培环路定理的 H 形式为：",
+      "options": [
+        "A. ∮H·dl = I_free",
+        "B. ∮B·dl = I_free",
+        "C. ∮H·dl = μ0 I_free",
+        "D. ∮B·dl = μ0μr I_free"
+      ],
+      "answer": "A",
+      "explanation": "引入H后，环路定理写为∮H·dl=I_free，右边仅包含自由电流。"
+    },
+    {
+      "id": "q045",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp037"
+      ],
+      "sourcePage": 44,
+      "content": "下列对铁磁质的描述正确的是：",
+      "options": [
+        "A. μr略小于1",
+        "B. μr略大于1但接近1",
+        "C. μr远大于1，可达数千",
+        "D. μr恒等于1"
+      ],
+      "answer": "C",
+      "explanation": "铁磁材料可使磁场显著增强，典型表现为μr≫1（可达数千）。"
+    },
+    {
+      "id": "q046",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp038"
+      ],
+      "sourcePage": 45,
+      "content": "在线性磁介质中，磁场能量密度 wm 的表达式正确的是：",
+      "options": [
+        "A. wm=½ε0E²",
+        "B. wm=B²/(2μ0μr)",
+        "C. wm=B²/(2ε0)",
+        "D. wm=½DE"
+      ],
+      "answer": "B",
+      "explanation": "线性磁介质中可写wm=B²/(2μ0μr)，等价形式为wm=½BH。"
+    },
+    {
+      "id": "q047",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp035"
+      ],
+      "sourcePage": 42,
+      "content": "真空中μr=1，因此B=μ0H。",
+      "answer": "对",
+      "explanation": "在真空中相对磁导率μr=1，B与H的关系退化为B=μ0H。"
+    },
+    {
+      "id": "q048",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp037"
+      ],
+      "sourcePage": 44,
+      "content": "抗磁质的相对磁导率 μr 略大于 1。",
+      "answer": "错",
+      "explanation": "抗磁质的μr略小于1；顺磁质才是μr略大于1且接近1。"
+    },
+    {
+      "id": "q049",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp039"
+      ],
+      "sourcePage": 46,
+      "content": "若某回路的磁通量随时间变化为 ΦB(t)=Φ0+kt（k为常数），则感应电动势 ε 为：",
+      "options": [
+        "A. 0",
+        "B. -k",
+        "C. k",
+        "D. -kt"
+      ],
+      "answer": "B",
+      "explanation": "法拉第定律：ε=-dΦB/dt。对ΦB=Φ0+kt，有dΦB/dt=k，因此ε=-k。"
+    },
+    {
+      "id": "q050",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp041"
+      ],
+      "sourcePage": 48,
+      "content": "长度为 L 的导体棒以速度 v 在匀强磁场 B 中垂直切割磁力线（v⊥B且棒与v垂直），两端的动生电动势大小为：",
+      "options": [
+        "A. ε=BLv",
+        "B. ε=Bv/L",
+        "C. ε=BL/v",
+        "D. ε=0"
+      ],
+      "answer": "A",
+      "explanation": "动生电动势的一般式为ε=∫(v×B)·dl；在v⊥B且棒长L与v垂直时，简化为ε=BLv。"
+    },
+    {
+      "id": "q051",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp039"
+      ],
+      "sourcePage": 46,
+      "content": "穿过某闭合回路的磁通量方向垂直纸面向外且逐渐增大，则感应电流方向为：",
+      "options": [
+        "A. 顺时针",
+        "B. 逆时针",
+        "C. 不产生感应电流",
+        "D. 无法判断"
+      ],
+      "answer": "A",
+      "explanation": "磁通量“向外”增大，感应效应要阻碍其增大，因此感应磁场应指向纸内；按右手定则产生纸内磁场的电流方向为顺时针。"
+    },
+    {
+      "id": "q052",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp043"
+      ],
+      "sourcePage": 50,
+      "content": "关于互感系数 M 的定义，正确的是：",
+      "options": [
+        "A. M=Φ12/I2",
+        "B. M=Φ12/I1=Φ21/I2",
+        "C. M=I1/Φ12",
+        "D. M随电流I1线性变化"
+      ],
+      "answer": "B",
+      "explanation": "互感系数定义为M=Φ12/I1，同时满足对称性M=Φ21/I2（在几何与介质一定时成立）。"
+    },
+    {
+      "id": "q053",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp039"
+      ],
+      "sourcePage": 46,
+      "content": "楞次定律指出：感应电流的磁效应总是阻碍磁通量的变化。",
+      "answer": "对",
+      "explanation": "负号体现“反抗变化”的方向性，用于判断感应电流方向。"
+    },
+    {
+      "id": "q054",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp040"
+      ],
+      "sourcePage": 47,
+      "content": "感生电场是保守场，因此可以用电势差（与路径无关）完全描述。",
+      "answer": "错",
+      "explanation": "感生电场满足∮E·dl=-dΦB/dt，其环量一般不为零，属于非保守（旋涡）电场，不能用单值电势完全描述。"
+    },
+    {
+      "id": "q055",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp044",
+        "kp046"
+      ],
+      "sourcePage": 51,
+      "content": "下列哪条方程表达“变化的磁场产生电场”（电场环量与磁通量变化率相关）？",
+      "options": [
+        "A. 电场的高斯定理",
+        "B. 磁场的高斯定理",
+        "C. 法拉第定律",
+        "D. 安培-麦克斯韦定律"
+      ],
+      "answer": "C",
+      "explanation": "法拉第定律给出∮E·dl = -∂/∂t ∬B·dS，描述变磁生电与感生电场。"
+    },
+    {
+      "id": "q056",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp045"
+      ],
+      "sourcePage": 53,
+      "content": "电容器充电时导线中有电流 I。对同一闭合回路，若选择穿过导线的曲面可得“有电流”，选择穿过极板间隙的曲面导电电流却为0。为使安培定律对不同曲面选择结果一致，安培-麦克斯韦定律必须包含哪一项？",
+      "options": [
+        "A. ρ/ε0",
+        "B. ∂/∂t ∬D·dS（位移电流项）",
+        "C. -dΦB/dt",
+        "D. ∮B·dS"
+      ],
+      "answer": "B",
+      "explanation": "加入位移电流项后：∮H·dl=∬j·dS+∂/∂t ∬D·dS，使不同曲面选取下右边给出同一结果，避免电容充电问题中的矛盾。"
+    },
+    {
+      "id": "q057",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp047"
+      ],
+      "sourcePage": 57,
+      "content": "在理想平面电磁波中，电场 E、磁场 B 与传播方向 k 的相对关系最符合的是：",
+      "options": [
+        "A. E∥B∥k",
+        "B. E⊥B，且E与B都⊥k",
+        "C. E⊥B且E∥k",
+        "D. B∥k且E⊥k"
+      ],
+      "answer": "B",
+      "explanation": "电磁波中E与B相互垂直，并且都垂直于传播方向（横波特征），这是电磁波的典型几何关系。"
+    },
+    {
+      "id": "q058",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp047"
+      ],
+      "sourcePage": 57,
+      "content": "在无自由电荷与无自由电流的区域（ρ=0，j=0），麦克斯韦方程组预言仍可以存在：",
+      "options": [
+        "A. 只有静电场而无磁场",
+        "B. 只有静磁场而无电场",
+        "C. 电磁波传播",
+        "D. 磁单极子"
+      ],
+      "answer": "C",
+      "explanation": "变场耦合使E与B可相互激发，在无源区形成自洽传播的电磁波。"
+    },
+    {
+      "id": "q059",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp044"
+      ],
+      "sourcePage": 51,
+      "content": "麦克斯韦方程组由四个方程组成。",
+      "answer": "对",
+      "explanation": "四个方程分别为：电场高斯、磁场高斯、法拉第定律、安培-麦克斯韦定律。"
+    },
+    {
+      "id": "q060",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp045"
+      ],
+      "sourcePage": 53,
+      "content": "位移电流项只在真空中存在，在介质中不存在。",
+      "answer": "错",
+      "explanation": "位移电流与∂D/∂t相关，D在真空与介质中都可随时间变化，因此位移电流项是变场情况下普遍需要的。"
+    },
+    {
+      "id": "q061",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp003"
+      ],
+      "sourcePage": 5,
+      "content": "均匀带电细杆总电荷为Q、长度为L，则线电荷密度 λ=______。",
+      "answer": "Q/L",
+      "explanation": "线电荷密度定义为单位长度上的电荷量，均匀分布时λ=Q/L。"
+    },
+    {
+      "id": "q062",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp004"
+      ],
+      "sourcePage": 7,
+      "content": "在本系统中用 q_in 表示高斯面内包围的总电荷，高斯定理可写为 ∮E·dS = ______ / ε0。",
+      "answer": "q_in",
+      "explanation": "高斯定理为∮E·dS=q内/ε0，这里把“包围电荷”记作q_in。"
+    },
+    {
+      "id": "q063",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp004",
+        "kp005"
+      ],
+      "sourcePage": 7,
+      "content": "为什么用高斯定理求电场通常需要对称性？请写出能把∮E·dS简化为“E×有效面积”的两个关键条件。",
+      "answer": "高斯定理总是成立，但要由它“直接解出E”，需要让积分变简单。通常要选取与电荷分布对称性匹配的高斯面，使：(1) 高斯面上电场大小处处相等（或在贡献通量的部分恒定）；(2) 电场方向与面元法向夹角恒定，常见为处处垂直（或平行）从而点积简化。满足后可把面积分化为乘法求E。",
+      "explanation": "没有足够对称性时，∮E·dS虽给出总通量，但无法唯一确定局部E的分布。"
+    },
+    {
+      "id": "q064",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp006"
+      ],
+      "sourcePage": 11,
+      "content": "无限长均匀带电直线的线电荷密度 λ=2.0 nC/m，求距直线 r=0.10 m 处电场大小（取k=9.0×10^9 N·m²/C²）。",
+      "answer": "E = λ/(2π ε0 r) = 2kλ/r = 2×(9.0×10^9)×(2.0×10^-9)/0.10 ≈ 3.6×10^2 N/C（约360 N/C）。",
+      "explanation": "无限长均匀带电直线的电场大小E=λ/(2π ε0 r)，且1/(2π ε0)=2k，可直接用E=2kλ/r计算。"
+    },
+    {
+      "id": "q065",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp009"
+      ],
+      "sourcePage": 14,
+      "content": "连续电荷分布求电势的积分形式为 V = ∫ ______ /(4π ε0 r)。",
+      "answer": "dq",
+      "explanation": "把连续分布分割成电荷微元dq，各微元电势dV=dq/(4π ε0 r)，再对整体积分。"
+    },
+    {
+      "id": "q066",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp010"
+      ],
+      "sourcePage": 16,
+      "content": "均匀带电球壳半径为R、总电荷为Q，取V(∞)=0，则壳内(r<R)电势 V=______（其中k=1/4π ε0）。",
+      "answer": "kQ/R",
+      "explanation": "球壳内电场为零，因此壳内电势为常数并等于壳面电势：V=kQ/R。"
+    },
+    {
+      "id": "q067",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp010",
+        "kp011"
+      ],
+      "sourcePage": 16,
+      "content": "球壳内部电场E=0但电势V不为0，这如何与E=-∇V兼容？请用“梯度”的语言解释。",
+      "answer": "E=-∇V意味着电场由电势的空间变化率决定。球壳内部E=0说明∇V=0，即电势在空间中不随位置变化（是常数），并不要求这个常数必须等于0；常数值由边界（壳面电势）决定。",
+      "explanation": "“E=0”对应的是“电势不变”，而不是“电势为零”。"
+    },
+    {
+      "id": "q068",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp008"
+      ],
+      "sourcePage": 13,
+      "content": "点电荷Q产生电势V=kQ/r（取V(∞)=0）。求 r=R 与 r=2R 两点的电势差 V(R)-V(2R)。",
+      "answer": "V(R)-V(2R)=kQ/R - kQ/(2R)=kQ/(2R)。",
+      "explanation": "电势是标量，直接代入V=kQ/r计算两点电势并相减即可。"
+    },
+    {
+      "id": "q069",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp015"
+      ],
+      "sourcePage": 22,
+      "content": "导体球壳中心放点电荷q（球壳初始不带电），静电平衡时内表面感应电荷为______。",
+      "answer": "-q",
+      "explanation": "为保证导体材料内部电场为零，内表面必须感应出等量异号电荷-q。"
+    },
+    {
+      "id": "q070",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp016"
+      ],
+      "sourcePage": 23,
+      "content": "在简化模型下，电介质中电场强度满足 E=E0/er，其中er表示相对介电常数；填空：E=E0/______。",
+      "answer": "er",
+      "explanation": "相对介电常数越大，极化削弱电场越强，典型情况下E≈E0/er。"
+    },
+    {
+      "id": "q071",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp017"
+      ],
+      "sourcePage": 24,
+      "content": "为什么引入电位移矢量D后，高斯定理可以写成只与自由电荷有关？请简述自由电荷与束缚电荷的区别。",
+      "answer": "电介质极化会产生束缚电荷，使总电场E同时受自由电荷与束缚电荷影响。引入D后把介质响应（极化）吸收到D的定义中，使∮D·dS=Q_free只与自由电荷相关。自由电荷是可在导体/电路中定向移动、可由外部施加的电荷；束缚电荷来自介质极化，受限于原子/分子内部位移，不能像自由电荷那样在宏观上自由迁移。",
+      "explanation": "用D处理介质问题的核心就是“把束缚电荷的影响放进材料参数里”，从而把计算聚焦到可控的自由电荷。"
+    },
+    {
+      "id": "q072",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp017"
+      ],
+      "sourcePage": 24,
+      "content": "平行板间充满介质，已知自由面电荷密度 σ_free=5.0 μC/m²、相对介电常数 εr=2.5。求位移矢量D与电场强度E（取ε0=8.85×10^-12）。",
+      "answer": "D=σ_free=5.0×10^-6 C/m²；E=D/(ε0εr)=5.0×10^-6 /(8.85×10^-12×2.5)≈2.26×10^5 V/m。",
+      "explanation": "平行板忽略边缘效应时D法向大小等于σ_free；线性介质中E=D/(ε0εr)。"
+    },
+    {
+      "id": "q073",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp019"
+      ],
+      "sourcePage": 26,
+      "content": "忽略边缘效应时，平行板电容器电容C=ε0S/______。",
+      "answer": "d",
+      "explanation": "平行板电容器电容C=ε0S/d，其中d为两板间距。"
+    },
+    {
+      "id": "q074",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp020"
+      ],
+      "sourcePage": 27,
+      "content": "电容器能量公式W=½CU²，其中U表示两极板间的______（填“电压”即可）。",
+      "answer": "电压",
+      "explanation": "U是两极板之间的电势差，工程上通常称为电压。"
+    },
+    {
+      "id": "q075",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp019",
+        "kp020"
+      ],
+      "sourcePage": 26,
+      "content": "同一平行板电容器完全插入介质(εr>1)后：若电容器与电源断开（Q恒定）与连接电源（U恒定），储能W分别如何变化？简要说明原因。",
+      "answer": "插入介质使电容C增大。若Q恒定（与电源断开），W=Q²/(2C)随C增大而减小；若U恒定（与电源相连），W=½CU²随C增大而增大（能量来自电源额外做功）。",
+      "explanation": "关键是区分约束条件：断开电源时Q守恒；接电源时U守恒。"
+    },
+    {
+      "id": "q076",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp019",
+        "kp020"
+      ],
+      "sourcePage": 26,
+      "content": "平行板电容器面积S=200 cm²、板间距d=1.0 mm，完全填充介质εr=3.0。若两端电压U=100 V，求电容C与储能W（取ε0=8.85×10^-12）。",
+      "answer": "S=0.020 m²，d=1.0×10^-3 m；C=ε0εrS/d=8.85×10^-12×3.0×0.020/0.001≈5.31×10^-10 F；W=½CU²≈0.5×5.31×10^-10×(100)²≈2.66×10^-6 J。",
+      "explanation": "先单位换算，再用C=ε0εrS/d与W=½CU²。"
+    },
+    {
+      "id": "q077",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp025"
+      ],
+      "sourcePage": 32,
+      "content": "长螺线管内部磁场近似公式：B=μ0 n ______。",
+      "answer": "I",
+      "explanation": "长螺线管内部磁场近似均匀，大小B=μ0 n I。"
+    },
+    {
+      "id": "q078",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp023"
+      ],
+      "sourcePage": 30,
+      "content": "无限长直导线磁场B=μ0I/(2πr)，因此B与距离r成______（填“正比”或“反比”）。",
+      "answer": "反比",
+      "explanation": "公式中B∝1/r，r越大磁场越弱。"
+    },
+    {
+      "id": "q079",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp022",
+        "kp026"
+      ],
+      "sourcePage": 29,
+      "content": "毕奥-萨伐尔定律与安培环路定理各适合什么场景？请用一句话对比两者的“使用门槛”。",
+      "answer": "毕奥-萨伐尔定律适用于一般稳恒电流分布，但往往需要积分；安培环路定理对任意情况都成立，但只有在高度对称时才能把线积分化简为乘法从而直接求出B的大小分布。",
+      "explanation": "可以理解为：毕奥-萨伐尔“通用但算得累”，安培环路“成立永远但能直接算出来需要对称性”。"
+    },
+    {
+      "id": "q080",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp025"
+      ],
+      "sourcePage": 32,
+      "content": "长螺线管单位长度匝数n=1000 m^-1，通电电流I=0.50 A。求螺线管内部磁场B（取μ0=4π×10^-7）。",
+      "answer": "B=μ0 n I = (4π×10^-7)×1000×0.50 = 2π×10^-4 T ≈ 6.28×10^-4 T。",
+      "explanation": "长螺线管内部近似均匀场，直接用B=μ0 n I计算即可。"
+    },
+    {
+      "id": "q081",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp028"
+      ],
+      "sourcePage": 35,
+      "content": "磁场高斯定理的积分形式为：∮B·dS = ______。",
+      "answer": "0",
+      "explanation": "闭合曲面上的总磁通量恒为零，反映磁场无源无汇。"
+    },
+    {
+      "id": "q082",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp027"
+      ],
+      "sourcePage": 34,
+      "content": "均匀磁场中，若θ=90°（B与面法向夹角为90°），则磁通量ΦB=______。",
+      "answer": "0",
+      "explanation": "ΦB=BS cosθ，θ=90°时cosθ=0，故ΦB=0。"
+    },
+    {
+      "id": "q083",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp028",
+        "kp029"
+      ],
+      "sourcePage": 35,
+      "content": "为什么“闭合面总磁通量为0”不代表该区域磁场为0？请用磁力线闭合做直观说明。",
+      "answer": "闭合面总磁通量为0只说明穿出闭合面的磁力线条数与穿入的条数相等（代数和为零），并不意味着没有磁力线穿过该面。磁力线是闭合的：它可以从闭合面某处穿出，又在另一处穿入，因此净通量为零但局部B可以非零。",
+      "explanation": "这是“磁力线闭合”与“无磁单极子”的直接体现。"
+    },
+    {
+      "id": "q084",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp027"
+      ],
+      "sourcePage": 34,
+      "content": "均匀磁场B=0.20 T穿过面积S=0.050 m²的平面，B与面法向夹角θ=60°。求磁通量ΦB。",
+      "answer": "ΦB=BS cosθ=0.20×0.050×cos60°=0.20×0.050×0.5=5.0×10^-3 Wb。",
+      "explanation": "均匀磁场穿过平面磁通量公式为ΦB=BS cosθ。"
+    },
+    {
+      "id": "q085",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp030"
+      ],
+      "sourcePage": 37,
+      "content": "洛伦兹力大小F=qvB sinα，若α=0（v∥B），则F=______。",
+      "answer": "0",
+      "explanation": "当v与B平行时sinα=0，磁场力为零。"
+    },
+    {
+      "id": "q086",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp034"
+      ],
+      "sourcePage": 41,
+      "content": "线圈转动时磁力矩做功可写为W=I·deltaPhi，其中deltaPhi表示磁通量的______。",
+      "answer": "变化量",
+      "explanation": "W=IΔΦB中ΔΦB表示磁通量的变化量（从初态到末态的差）。"
+    },
+    {
+      "id": "q087",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp033",
+        "kp034"
+      ],
+      "sourcePage": 40,
+      "content": "简述磁矩与磁通量的关系，并解释W=IΔΦB的物理意义（能量从哪里来/到哪里去）。",
+      "answer": "线圈磁矩pm=IS n̂决定线圈在外磁场中的取向趋势；线圈所“截获”的磁通量ΦB与线圈面积、法向与B夹角有关。线圈转动改变夹角会改变ΦB，磁力矩对线圈做功W=IΔΦB，表示在电流存在时，磁场与电路之间可以通过“通量变化”发生能量交换：磁场对线圈做的机械功对应电磁能量的减少（或外力做功对应电磁能量增加），最终体现为电磁系统能量在场与机械之间的转化。",
+      "explanation": "把“力矩做功”与“通量变化”联系起来，是理解电机能量转换的关键桥梁。"
+    },
+    {
+      "id": "q088",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch007",
+      "knowledgePointIds": [
+        "kp031"
+      ],
+      "sourcePage": 38,
+      "content": "电子（m=9.1×10^-31 kg，|q|=1.6×10^-19 C）以速度v=3.0×10^6 m/s垂直进入匀强磁场B=0.20 T。求其回旋半径R。",
+      "answer": "R=mv/(|q|B)= (9.1×10^-31×3.0×10^6)/(1.6×10^-19×0.20) ≈ 8.5×10^-5 m。",
+      "explanation": "v⊥B时做匀速圆周运动，回旋半径公式为R=mv/(|q|B)。"
+    },
+    {
+      "id": "q089",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp037"
+      ],
+      "sourcePage": 44,
+      "content": "顺磁质的相对磁导率μr通常______1（填“大于”或“小于”）。",
+      "answer": "大于",
+      "explanation": "顺磁质μr略大于1（但接近1），会使磁场稍微增强。"
+    },
+    {
+      "id": "q090",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp038"
+      ],
+      "sourcePage": 45,
+      "content": "真空中磁场能量密度wm=B²/(2μ0)，因此wm与B的平方成______（填“正比”或“反比”）。",
+      "answer": "正比",
+      "explanation": "wm=B²/(2μ0)表明磁场能量密度与B²正比。"
+    },
+    {
+      "id": "q091",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp036"
+      ],
+      "sourcePage": 43,
+      "content": "为什么在磁介质问题中使用H而不是直接用B更方便？回答时提到自由电流与束缚电流即可。",
+      "answer": "在磁介质中，实际B同时受自由电流与介质磁化（可等效为束缚电流）影响。引入H后，安培环路定理写为∮H·dl=I_free，使方程右边只包含可控的自由电流，把束缚电流/磁化效应吸收到材料参数（如μr）中，因此求解更直接。",
+      "explanation": "这与电介质中用D把“束缚电荷”影响吸收进材料响应的思路类似。"
+    },
+    {
+      "id": "q092",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch008",
+      "knowledgePointIds": [
+        "kp038"
+      ],
+      "sourcePage": 45,
+      "content": "线性磁介质中B=0.10 T、μr=500。求磁场能量密度wm（取μ0=4π×10^-7）。",
+      "answer": "wm=B²/(2μ0μr)=0.10²/[2×(4π×10^-7)×500]=0.01/(4π×10^-4)≈7.96 J/m³（约8.0 J/m³）。",
+      "explanation": "线性介质中wm=B²/(2μ0μr)，代入数值并注意μ0与μr共同出现在分母。"
+    },
+    {
+      "id": "q093",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp042"
+      ],
+      "sourcePage": 49,
+      "content": "自感电动势公式为：εL = -L·______。",
+      "answer": "dI/dt",
+      "explanation": "自感电动势与电流变化率成正比，符号由负号体现“阻碍电流变化”。"
+    },
+    {
+      "id": "q094",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp040"
+      ],
+      "sourcePage": 47,
+      "content": "法拉第定律给出感生电动势：ε = ∮E·dl = -______。",
+      "answer": "dΦB/dt",
+      "explanation": "感生电动势等于磁通量对时间的负导数：ε=-dΦB/dt。"
+    },
+    {
+      "id": "q095",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp040",
+        "kp041"
+      ],
+      "sourcePage": 47,
+      "content": "比较感生电动势与动生电动势：它们分别由什么原因产生？各举一个典型例子。",
+      "answer": "感生电动势由磁场随时间变化产生（导体可不动），本质是空间中出现旋涡电场，例如变压器原边电流变化在副边线圈中感生电动势；动生电动势由导体在磁场中运动切割磁力线产生，本质是运动电荷受洛伦兹力分离，例如导体棒在匀强磁场中以速度v运动产生ε=BLv。",
+      "explanation": "两者机制不同，但都可归结为“磁通量随时间变化”并满足法拉第定律。"
+    },
+    {
+      "id": "q096",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch009",
+      "knowledgePointIds": [
+        "kp042"
+      ],
+      "sourcePage": 49,
+      "content": "线圈自感系数L=0.20 H，电流从0 A在0.50 s内均匀增大到2.0 A。求感应电动势的大小。",
+      "answer": "|εL|=L|dI/dt|=0.20×(2.0/0.50)=0.80 V。",
+      "explanation": "自感电动势大小为L|dI/dt|；符号负号表示方向总阻碍电流变化。"
+    },
+    {
+      "id": "q097",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp045"
+      ],
+      "sourcePage": 53,
+      "content": "安培-麦克斯韦定律中新增的项对应的电流称为______电流。",
+      "answer": "位移",
+      "explanation": "新增项∂D/∂t被称为位移电流，用于描述变电场对磁场的等效贡献。"
+    },
+    {
+      "id": "q098",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp047"
+      ],
+      "sourcePage": 57,
+      "content": "电磁波可以在______中传播（填“真空”或“介质”）。",
+      "answer": "真空",
+      "explanation": "电磁波无需物质介质，可在真空中传播；介质中也能传播但速度与介质参数有关。"
+    },
+    {
+      "id": "q099",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp045",
+        "kp048"
+      ],
+      "sourcePage": 53,
+      "content": "用一句话说明位移电流在电容充电问题中解决了什么矛盾，并指出它与电荷守恒的关系。",
+      "answer": "位移电流解决了“电容极板间导电电流为0却又要求环路磁场与导线电流一致”的矛盾；加入∂D/∂t项后安培定律与连续性方程相容，从而保证电荷守恒在变场情况下仍成立。",
+      "explanation": "位移电流不是载流子穿过间隙，而是变电场对磁场的等效贡献，体现麦克斯韦对电磁学统一的关键一步。"
+    },
+    {
+      "id": "q100",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch010",
+      "knowledgePointIds": [
+        "kp045"
+      ],
+      "sourcePage": 53,
+      "content": "某区域穿过一曲面的电位移通量 ΦD = ∬D·dS 随时间以 3.0×10^-6 C/s 的速率增加。求对应的位移电流 Id。",
+      "answer": "Id=dΦD/dt=3.0×10^-6 A。",
+      "explanation": "位移电流定义为Id=∂/∂t ∬D·dS，即电位移通量的变化率，单位为安培。"
+    }
+  ]
+}

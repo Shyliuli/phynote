@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>电磁学智能练习系统</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar" id="topbar">
+      <div class="topbar__inner container">
+        <a class="brand" href="#/">
+          <span class="brand__badge" aria-hidden="true">EM</span>
+          <span class="brand__text">电磁学智能练习系统</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="打开导航" aria-expanded="false">
+          菜单
+        </button>
+        <nav class="nav" id="nav" aria-label="主导航"></nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container" id="app"></div>
+    </main>
+
+    <script src="js/data_seed.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/modules/home.js"></script>
+    <script src="js/modules/practice.js"></script>
+    <script src="js/modules/knowledge.js"></script>
+    <script src="js/modules/mistakes.js"></script>
+    <script src="js/modules/progress.js"></script>
+    <script src="js/modules/stats.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
