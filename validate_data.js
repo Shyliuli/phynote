@@ -150,12 +150,30 @@ function validateQuestions({ knowledge, questionsData }) {
   }
 
   // Per-chapter quotas (as required by the project tasks)
+  function getExpectedCounts(chapterId) {
+    const num = Number(String(chapterId || "").replace(/^ch/, ""));
+    if (Number.isFinite(num) && num >= 11) {
+      return { choice: 3, judge: 2, fill: 1, short: 1, calc: 1, total: 8 };
+    }
+    return { choice: 4, judge: 2, fill: 2, short: 1, calc: 1, total: 10 };
+  }
+
   for (const chapter of knowledge.chapters) {
     const stats = perChapter.get(chapter.id);
     if (!stats) fail(`chapter ${chapter.id} has no questions`);
+    const expected = getExpectedCounts(chapter.id);
     const ok =
-      stats.choice === 4 && stats.judge === 2 && stats.fill === 2 && stats.short === 1 && stats.calc === 1;
-    if (!ok) fail(`chapter ${chapter.id} counts mismatch: ${JSON.stringify(stats)}`);
+      stats.choice === expected.choice &&
+      stats.judge === expected.judge &&
+      stats.fill === expected.fill &&
+      stats.short === expected.short &&
+      stats.calc === expected.calc &&
+      stats.total === expected.total;
+    if (!ok) {
+      fail(
+        `chapter ${chapter.id} counts mismatch: expected ${JSON.stringify(expected)}, got ${JSON.stringify(stats)}`,
+      );
+    }
   }
 
   // Coverage: every knowledgePointId must be used at least once

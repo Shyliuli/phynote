@@ -1,9 +1,9 @@
-// Auto-generated from input/电磁学.md and project/data/knowledge.json. DO NOT EDIT.
+// Auto-generated from input/电磁学.md + input/新增笔记.txt and project/data/knowledge.json. DO NOT EDIT.
 (function () {
   window.__EM_NOTES_SEED__ = {
-  "source": "input/电磁学.md",
+  "source": "input/电磁学.md + input/新增笔记.txt",
   "course": "大学物理·电磁学",
-  "totalPages": 59,
+  "totalPages": 73,
   "pages": [
     {
       "page": 1,
@@ -475,7 +475,119 @@
       "chapterName": "麦克斯韦方程组：电磁学的统一",
       "knowledgePointId": "kp048",
       "knowledgePointName": "统一与历史意义：从电磁学到相对论",
-      "content": "**遇到电磁感应问题**：\n1. 先判断是感生还是动生\n2. 用法拉第定律 $\\varepsilon = -d\\Phi/dt$\n3. 注意楞次定律判断方向"
+      "content": "**遇到电磁感应问题**：\n1. 先判断是感生还是动生\n2. 用法拉第定律 $\\varepsilon = -d\\Phi/dt$\n3. 注意楞次定律判断方向\n\n# 物理笔记整理：相对论与量子物理"
+    },
+    {
+      "page": 60,
+      "chapterId": "ch011",
+      "chapterName": "相对论：洛伦兹变换与时空效应",
+      "knowledgePointId": "kp049",
+      "knowledgePointName": "洛伦兹变换与逆变换",
+      "content": "## 一、相对论\n\n### 1. 洛伦兹变换\n\n光速不变原理：光在真空中总以确定速度 $c$ 传播。\n设 $S'$ 系相对 $S$ 系在 $x$ 轴速度为 $v$，则有：\n$$x' = \\gamma(x - vt), \\quad t' = \\gamma(t - \\frac{v}{c^2}x)$$\n其中 $\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}}$"
+    },
+    {
+      "page": 61,
+      "chapterId": "ch011",
+      "chapterName": "相对论：洛伦兹变换与时空效应",
+      "knowledgePointId": "kp049",
+      "knowledgePointName": "洛伦兹变换与逆变换",
+      "content": "**逆变换：**\n$$x = \\gamma(x' + vt'), \\quad t = \\gamma(t' + \\frac{v}{c^2}x')$$\n记忆技巧：不带“撇”的换带“撇”的，带“撇”的换不带“撇”的，$v$ 取 $-v$。相当于把 $S$ 系和 $S'$ 系换个名。"
+    },
+    {
+      "page": 62,
+      "chapterId": "ch011",
+      "chapterName": "相对论：洛伦兹变换与时空效应",
+      "knowledgePointId": "kp050",
+      "knowledgePointName": "动尺收缩与动钟变慢",
+      "content": "**增量形式：**\n$$\\Delta x' = \\gamma(\\Delta x - v\\Delta t), \\quad \\Delta t' = \\gamma(\\Delta t - \\frac{v}{c^2}\\Delta x)$$\n已知 $\\Delta x, \\Delta t, \\Delta x', \\Delta t', v$ 五个量中的三个，可求其余两个。\n\n### 2. 时空观\n\n*   **动尺收缩：** $L = \\frac{L_0}{\\gamma}$\n*   **动钟变慢：** $\\Delta t = \\gamma \\Delta t_0$\n*   **质量变大：** $m = \\gamma m_0$"
+    },
+    {
+      "page": 63,
+      "chapterId": "ch011",
+      "chapterName": "相对论：洛伦兹变换与时空效应",
+      "knowledgePointId": "kp051",
+      "knowledgePointName": "相对论能量与动量关系",
+      "content": "### 3. 相对论能量\n\n*   **总能量：** $E = mc^2 = \\gamma m_0 c^2$\n*   **动能：** $E_k = mc^2 - m_0 c^2 = (\\gamma - 1)m_0 c^2$\n*   **动量：** $p = mv = \\gamma m_0 v$"
+    },
+    {
+      "page": 64,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp052",
+      "knowledgePointName": "黑体辐射的经验定律",
+      "content": "## 二、量子物理基础\n\n### 1. 黑体辐射\n\n*   **斯特潘-波尔兹曼定律：** $M = \\sigma T^4$ （$M$ 为辐出度/发射本领，$T$ 为温度，$\\sigma$ 为常数）\n*   **维恩位移定律：** $\\lambda_m \\cdot T = b$ （$\\lambda_m$ 为峰值波长，$b$ 为常数）\n\n### 2. 光的二象性与光电效应"
+    },
+    {
+      "page": 65,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp052",
+      "knowledgePointName": "黑体辐射的经验定律",
+      "content": "*   **光子能量：** $E = h\\nu = h\\frac{c}{\\lambda}$\n*   **光子动量：** $p = \\frac{E}{c} = \\frac{h}{\\lambda}$\n*   **光子质量：** $m = \\frac{h\\nu}{c^2} = \\frac{h}{c\\lambda}$\n*   **光强：** $I = nh\\nu = nh\\frac{c}{\\lambda}$ （$n$ 为光子个数）\n*   **普朗克常数：** $h = 6.63 \\times 10^{-34} \\, J\\cdot s$"
+    },
+    {
+      "page": 66,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp053",
+      "knowledgePointName": "光子概念与光电效应",
+      "content": "**光电效应方程（能量守恒）：**\n入射光能量 = 打出电子能量 + 逸出功\n$$h\\nu = eU_0 + h\\nu_0$$\n或者表示为：\n$$h\\frac{c}{\\lambda} = \\frac{1}{2}mv^2 + h\\frac{c}{\\lambda_0}$$\n*   $U_0$：截止电压（遏止电势差）\n*   $\\frac{1}{2}mv^2$：最大初动能\n*   $\\nu_0$：红限/截止频率\n*   $\\lambda_0$：红限波长\n*   **逸出功**取决于板本身（金属材质）。\n\n### 3. 康普顿效应（高能光子撞静止电子）"
+    },
+    {
+      "page": 67,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp053",
+      "knowledgePointName": "光子概念与光电效应",
+      "content": "波长增量公式：\n$$\\Delta \\lambda = \\lambda_{散} - \\lambda_{\\lambda} = \\frac{h}{m_e c}(1 - \\cos\\varphi) = 2.4 \\times 10^{-12}(1 - \\cos\\varphi)$$\n其中 $m_e$ 为电子质量。"
+    },
+    {
+      "page": 68,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp054",
+      "knowledgePointName": "康普顿效应与光子碰撞",
+      "content": "**能量守恒（不能带 $\\frac{1}{2}mv^2$，需考虑相对论）：**\n$$\\frac{hc}{\\lambda} + m_e c^2 = \\frac{hc}{\\lambda_{散}} + mc^2$$\n反冲电子动能：$E_k = mc^2 - m_e c^2 = \\frac{hc}{\\lambda} - \\frac{hc}{\\lambda_{散}}$"
+    },
+    {
+      "page": 69,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp054",
+      "knowledgePointName": "康普顿效应与光子碰撞",
+      "content": "**动量守恒：**\n*   $x$ 轴：$\\frac{h}{\\lambda} = \\frac{h}{\\lambda_{散}}\\cos\\varphi + mv\\cos\\theta$\n*   $y$ 轴：$0 = \\frac{h}{\\lambda_{散}}\\sin\\varphi - mv\\sin\\theta$\n其中，当 $\\varphi = 90^\\circ$ 时，反冲电子动量 $P = \\sqrt{(\\frac{h}{\\lambda_{散}})^2 + (\\frac{h}{\\lambda})^2}$"
+    },
+    {
+      "page": 70,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp055",
+      "knowledgePointName": "德布罗意波与不确定关系",
+      "content": "### 4. 德布罗意波（物质波）\n\n$$\\lambda = \\frac{h}{p} = \\frac{h}{mv}$$\n（速记：光 $p = \\frac{h}{\\lambda}$，只是量纲相同）\n\n**不确定关系：**\n$\\Delta x \\Delta p \\ge \\frac{\\hbar}{2}$ （位移不确定量 $\\times$ 动量不确定量 $\\ge$ 某个常数）\n\n### 5. 波函数与薛定谔方程基础\n\n波函数 $\\Psi$（不用管它是什么，也不用管势阱是什么，先求概率密度函数）：\n概率密度函数：$f = |\\Psi|^2$ （结果可能是虚数，计算为 $(a+bi)(a-bi)$ 即可）"
+    },
+    {
+      "page": 71,
+      "chapterId": "ch012",
+      "chapterName": "量子物理基础：光量子与物质波",
+      "knowledgePointId": "kp056",
+      "knowledgePointName": "波函数、概率密度与归一化",
+      "content": "**归一化条件：**\n$$\\int_{-\\infty}^{+\\infty} f(x)dx = 1$$\n**$a \\to b$ 区间概率：**\n$$\\int_{a}^{b} f(x)dx$$\n基态：$n=1$；第一激发态：$n=2 \\dots$"
+    },
+    {
+      "page": 72,
+      "chapterId": "ch013",
+      "chapterName": "原子结构：波尔模型与量子数",
+      "knowledgePointId": "kp057",
+      "knowledgePointName": "氢原子波尔理论与能级跃迁",
+      "content": "## 三、原子结构理论\n\n### 1. 氢原子波尔理论\n\n*   **能级：** $E_n = \\frac{E_1}{n^2} = \\frac{-13.6}{n^2} \\, eV$\n*   **跃迁：** 从 $i$ 级跃迁至 $j$ 级所吸收/释放光子能量 $h\\nu = E_i - E_j = (- \\frac{13.6}{i^2} - (- \\frac{13.6}{j^2})) \\, eV$\n*   **电子角动量：** $L = n\\frac{h}{2\\pi}$\n*   **波尔半径：** $r_n = n^2 r_1$\n\n### 2. 氢原子量子理论"
+    },
+    {
+      "page": 73,
+      "chapterId": "ch013",
+      "chapterName": "原子结构：波尔模型与量子数",
+      "knowledgePointId": "kp058",
+      "knowledgePointName": "量子数体系与壳层结构",
+      "content": "*   **主量子数：** $n = 1, 2, 3 \\dots$\n*   **角量子数：** $l = 0, 1, 2, \\dots, (n-1)$\n*   **磁量子数：** $m = 0, \\pm 1, \\pm 2 \\dots \\pm l$\n*   **自旋量子数：** $m_s = \\pm 1/2$ （独立）\n\n**结论：**\n*   给定一个电子，$(n, l, m, m_s)$ 为一组量子数，是唯一的。\n*   K 壳层：$n=1$。\n*   仅 $n$ 一定时，其它量子数排列组合总数为：$2n^2$。"
     }
   ]
 };

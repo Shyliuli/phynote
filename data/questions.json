@@ -1552,6 +1552,372 @@
       "content": "某区域穿过一曲面的电位移通量 ΦD = ∬D·dS 随时间以 3.0×10^-6 C/s 的速率增加。求对应的位移电流 Id。",
       "answer": "Id=dΦD/dt=3.0×10^-6 A。",
       "explanation": "位移电流定义为Id=∂/∂t ∬D·dS，即电位移通量的变化率，单位为安培。"
+    },
+    {
+      "id": "q101",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp049"
+      ],
+      "sourcePage": 60,
+      "content": "洛伦兹因子γ的正确表达式是：",
+      "options": [
+        "A. γ = 1 - v^2/c^2",
+        "B. γ = 1/\\sqrt(1 - v^2/c^2)",
+        "C. γ = 1/\\sqrt(1 + v^2/c^2)",
+        "D. γ = 1 + v^2/c^2"
+      ],
+      "answer": "B",
+      "explanation": "洛伦兹因子由相对性原理与光速不变导出，标准形式为γ=1/√(1-v^2/c^2)。"
+    },
+    {
+      "id": "q102",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 62,
+      "content": "动尺收缩的正确关系式是：",
+      "options": [
+        "A. L = γL0",
+        "B. L = L0/γ",
+        "C. L0 = L/γ",
+        "D. L0 = γ^2 L"
+      ],
+      "answer": "B",
+      "explanation": "沿运动方向的长度收缩为L=L0/γ，γ>1时长度变短。"
+    },
+    {
+      "id": "q103",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp051"
+      ],
+      "sourcePage": 63,
+      "content": "相对论动能Ek的正确表达式是：",
+      "options": [
+        "A. Ek = 1/2 m0 v^2",
+        "B. Ek = (\\gamma - 1)m0c^2",
+        "C. Ek = \\gamma m0 c^2",
+        "D. Ek = m0 c^2 - \\gamma m0 c^2"
+      ],
+      "answer": "B",
+      "explanation": "相对论动能为Ek=(γ-1)m0c^2，低速极限下可近似为经典动能。"
+    },
+    {
+      "id": "q104",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 62,
+      "content": "动钟变慢的公式为Δt = γΔt0，其中Δt0为固有时间。",
+      "answer": "对",
+      "explanation": "运动参考系测得的时间间隔变长，固有时间在物体静止系测得。"
+    },
+    {
+      "id": "q105",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp049"
+      ],
+      "sourcePage": 60,
+      "content": "洛伦兹逆变换可通过交换撇与不撇并令v取负得到。",
+      "answer": "对",
+      "explanation": "逆变换与正变换在数学结构上对称，只需交换变量并令v→-v。"
+    },
+    {
+      "id": "q106",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp049"
+      ],
+      "sourcePage": 60,
+      "content": "洛伦兹变换中时间坐标的表达式为 t' = γ(t - ______)。",
+      "answer": "vx/c^2",
+      "explanation": "标准形式为t' = γ(t - vx/c^2)。"
+    },
+    {
+      "id": "q107",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 62,
+      "content": "什么是固有时间和固有长度？各自在什么参考系中测得？",
+      "answer": "固有时间是事件在同一位置发生时由该位置静止系测得的时间间隔；固有长度是物体在自身静止系中测得的长度。",
+      "explanation": "固有量的定义强调“被测对象处于静止”的参考系，是相对论测量的基准。"
+    },
+    {
+      "id": "q108",
+      "type": "计算题",
+      "difficulty": "困难",
+      "chapterId": "ch011",
+      "knowledgePointIds": [
+        "kp051"
+      ],
+      "sourcePage": 63,
+      "content": "一粒子速度为0.6c，求其相对论动能与静能之比Ek/(m0c^2)。",
+      "answer": "γ=1/\\sqrt(1-0.6^2)=1.25，故Ek=(γ-1)m0c^2=0.25m0c^2，比例为0.25。",
+      "explanation": "先求γ，再用Ek=(γ-1)m0c^2即可。"
+    },
+    {
+      "id": "q109",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp052"
+      ],
+      "sourcePage": 64,
+      "content": "黑体辐射的斯特潘-玻尔兹曼定律表示：",
+      "options": [
+        "A. M = σT",
+        "B. M = σT^2",
+        "C. M = σT^4",
+        "D. M = σ/T"
+      ],
+      "answer": "C",
+      "explanation": "总辐出度与温度四次方成正比：M=σT^4。"
+    },
+    {
+      "id": "q110",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp053"
+      ],
+      "sourcePage": 66,
+      "content": "光电效应方程的正确形式是：",
+      "options": [
+        "A. hν = eU0 + hν0",
+        "B. hν = eU0 - hν0",
+        "C. hν = 1/2 m v^2 - hν0",
+        "D. hν = eU0 + 1/2 m v^2"
+      ],
+      "answer": "A",
+      "explanation": "能量守恒给出hν = eU0 + hν0，其中hν0为逸出功。"
+    },
+    {
+      "id": "q111",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp055"
+      ],
+      "sourcePage": 70,
+      "content": "若电子动量为p，则其德布罗意波长为：",
+      "options": [
+        "A. λ = p/h",
+        "B. λ = h/p",
+        "C. λ = hp",
+        "D. λ = h^2/p"
+      ],
+      "answer": "B",
+      "explanation": "德布罗意关系为λ=h/p，与光子形式一致。"
+    },
+    {
+      "id": "q112",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp053"
+      ],
+      "sourcePage": 66,
+      "content": "在光电效应中，增大光强会提高逸出电子的最大初动能。",
+      "answer": "错",
+      "explanation": "最大初动能由频率决定，光强主要影响电子数目。"
+    },
+    {
+      "id": "q113",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp055"
+      ],
+      "sourcePage": 70,
+      "content": "不确定关系只是测量仪器不够精密导致的误差。",
+      "answer": "错",
+      "explanation": "不确定性是量子本性，而非仪器误差。"
+    },
+    {
+      "id": "q114",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp052"
+      ],
+      "sourcePage": 64,
+      "content": "维恩位移定律写作 λm T = ______。",
+      "answer": "b",
+      "explanation": "维恩位移定律给出峰值波长与温度的乘积为常数b。"
+    },
+    {
+      "id": "q115",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp056"
+      ],
+      "sourcePage": 71,
+      "content": "波函数Ψ的物理意义如何表达？概率密度如何计算？",
+      "answer": "波函数Ψ描述量子态，概率密度为|Ψ|^2；对全空间积分为1，用于计算区间出现概率。",
+      "explanation": "Ψ本身可能为复数，必须取模平方才对应概率密度，并需满足归一化条件。"
+    },
+    {
+      "id": "q116",
+      "type": "计算题",
+      "difficulty": "中等",
+      "chapterId": "ch012",
+      "knowledgePointIds": [
+        "kp054"
+      ],
+      "sourcePage": 68,
+      "content": "康普顿散射中，散射角φ=90°，已知h/(mec)=2.4×10^-12 m，求波长增量Δλ。",
+      "answer": "Δλ= (h/mec)(1-cosφ)=2.4×10^-12×(1-0)=2.4×10^-12 m。",
+      "explanation": "φ=90°时cosφ=0，代入公式即可。"
+    },
+    {
+      "id": "q117",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp057"
+      ],
+      "sourcePage": 72,
+      "content": "氢原子波尔模型的能级公式是：",
+      "options": [
+        "A. En = 13.6/n^2 eV",
+        "B. En = -13.6/n^2 eV",
+        "C. En = -13.6n^2 eV",
+        "D. En = 13.6n eV"
+      ],
+      "answer": "B",
+      "explanation": "基态能量为-13.6 eV，能级随n增大趋近0。"
+    },
+    {
+      "id": "q118",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp058"
+      ],
+      "sourcePage": 73,
+      "content": "仅给定主量子数n时，允许的量子态数为：",
+      "options": [
+        "A. n",
+        "B. n^2",
+        "C. 2n^2",
+        "D. 2n"
+      ],
+      "answer": "C",
+      "explanation": "考虑l、m与自旋，允许量子态总数为2n^2。"
+    },
+    {
+      "id": "q119",
+      "type": "选择题",
+      "difficulty": "困难",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp057"
+      ],
+      "sourcePage": 72,
+      "content": "电子从n=3跃迁到n=2时放出光子能量为：",
+      "options": [
+        "A. 13.6(1/9-1/4) eV",
+        "B. 13.6(1/4-1/9) eV",
+        "C. 13.6(1/3-1/2) eV",
+        "D. 13.6(1/2-1/3) eV"
+      ],
+      "answer": "B",
+      "explanation": "能量差为Ei-Ej=-13.6/9-(-13.6/4)=13.6(1/4-1/9) eV。"
+    },
+    {
+      "id": "q120",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp058"
+      ],
+      "sourcePage": 73,
+      "content": "K壳层对应的主量子数n=1。",
+      "answer": "对",
+      "explanation": "K壳层是最内层，对应n=1。"
+    },
+    {
+      "id": "q121",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp058"
+      ],
+      "sourcePage": 73,
+      "content": "磁量子数m只能取0到l之间的正值。",
+      "answer": "错",
+      "explanation": "m的取值范围为-l到l的所有整数，包含负值与0。"
+    },
+    {
+      "id": "q122",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp057"
+      ],
+      "sourcePage": 72,
+      "content": "波尔半径的表达式为 rn = ______。",
+      "answer": "n^2 r1",
+      "explanation": "波尔半径随n的平方增长：rn=n^2 r1。"
+    },
+    {
+      "id": "q123",
+      "type": "简答题",
+      "difficulty": "中等",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp058"
+      ],
+      "sourcePage": 73,
+      "content": "简述四个量子数(n,l,m,ms)各自描述的物理含义。",
+      "answer": "n决定能级层级；l决定轨道角动量大小；m决定角动量的空间取向；ms描述自旋方向。",
+      "explanation": "四个量子数共同唯一确定电子状态，是原子结构的基本描述方式。"
+    },
+    {
+      "id": "q124",
+      "type": "计算题",
+      "difficulty": "困难",
+      "chapterId": "ch013",
+      "knowledgePointIds": [
+        "kp057"
+      ],
+      "sourcePage": 72,
+      "content": "氢原子从n=2跃迁到n=1，求释放光子能量（以eV表示）。",
+      "answer": "E=13.6(1/1^2-1/2^2)=13.6(1-1/4)=10.2 eV。",
+      "explanation": "能量差为|E1-E2|，代入En=-13.6/n^2 eV即可。"
     }
   ]
 }

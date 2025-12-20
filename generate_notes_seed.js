@@ -24,6 +24,12 @@ function getPartStartIndex(markdown, partLabel) {
   return idx >= 0 ? idx : null;
 }
 
+function getHeadingStartIndex(markdown, headingText) {
+  const re = new RegExp(`^##\\s+${headingText}\\s*$`, "m");
+  const idx = markdown.search(re);
+  return idx >= 0 ? idx : null;
+}
+
 function splitIntoUnits(text) {
   const lines = normalizeNewlines(text).split("\n");
   const units = [];
@@ -251,13 +257,15 @@ function writeAppSeed({ knowledge, questionsData, outPath }) {
 function main() {
   const knowledgePath = "project/data/knowledge.json";
   const questionsPath = "project/data/questions.json";
-  const markdownPath = "input/电磁学.md";
+  const markdownPaths = ["input/电磁学.md", "input/新增笔记.txt"];
   const outNotesSeedPath = "project/js/notes_seed.js";
   const outAppSeedPath = "project/js/data_seed.js";
 
   const knowledge = JSON.parse(readText(knowledgePath));
   const questionsData = JSON.parse(readText(questionsPath));
-  const markdown = normalizeNewlines(readText(markdownPath));
+  const markdown = normalizeNewlines(
+    markdownPaths.map((path) => readText(path)).join("\n\n---\n\n"),
+  );
 
   if (!knowledge || !Array.isArray(knowledge.chapters) || !knowledge.chapters.length) {
     fail(`invalid knowledge: ${knowledgePath}`);
@@ -267,7 +275,7 @@ function main() {
   }
 
   const orderedChapters = knowledge.chapters.slice();
-  if (orderedChapters.length !== 10) fail(`expected 10 chapters, got ${orderedChapters.length}`);
+  if (orderedChapters.length !== 13) fail(`expected 13 chapters, got ${orderedChapters.length}`);
 
   // Build chapter slices based on markdown “第X部分” headings (第2~10部分作为边界).
   const chapterStart = new Map();
@@ -277,9 +285,22 @@ function main() {
   for (let i = 0; i < partLabels.length; i += 1) {
     const idx = getPartStartIndex(markdown, partLabels[i]);
     if (idx == null) {
-      fail(`cannot find heading for ${partLabels[i]}部分 in ${markdownPath}`);
+      fail(`cannot find heading for ${partLabels[i]}部分 in ${markdownPaths.join(", ")}`);
     }
     chapterStart.set(chapterIds[i], idx);
+  }
+
+  const extraHeadings = [
+    { id: "ch011", heading: "一、相对论" },
+    { id: "ch012", heading: "二、量子物理基础" },
+    { id: "ch013", heading: "三、原子结构理论" },
+  ];
+  for (const item of extraHeadings) {
+    const idx = getHeadingStartIndex(markdown, item.heading);
+    if (idx == null) {
+      fail(`cannot find heading for ${item.heading} in ${markdownPaths.join(", ")}`);
+    }
+    chapterStart.set(item.id, idx);
   }
 
   // Page capacity (roughly based on plain-text characters). Larger => fewer pages.
@@ -375,13 +396,15 @@ function main() {
   }
 
   const seed = {
-    source: "input/电磁学.md",
+    source: markdownPaths.join(" + "),
     course: knowledge.course || "课程",
     totalPages: pages.length,
     pages,
   };
 
-  const notesSeedOutput = `// Auto-generated from ${markdownPath} and project/data/knowledge.json. DO NOT EDIT.\n(function () {\n  window.__EM_NOTES_SEED__ = ${JSON.stringify(
+  const notesSeedOutput = `// Auto-generated from ${markdownPaths.join(
+    " + ",
+  )} and project/data/knowledge.json. DO NOT EDIT.\n(function () {\n  window.__EM_NOTES_SEED__ = ${JSON.stringify(
     seed,
     null,
     2,

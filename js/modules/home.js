@@ -12,7 +12,7 @@
 
     app.innerHTML = `
       <section class="page">
-        <h1 class="page__title">电磁学智能练习系统</h1>
+        <h1 class="page__title">在线学习系统</h1>
         <p class="muted" style="margin: 0;">课程：${courseName}</p>
 
         <div class="grid" style="margin-top: 8px;">
@@ -46,7 +46,7 @@
                 <div class="card__icon" style="background: rgba(37, 99, 235, 0.12); color: var(--primary);">笔</div>
                 <div class="card__col">
                   <h3 class="card__title">复习笔记</h3>
-                  <p class="card__meta">按页浏览电磁学笔记，页码与题目来源一致。</p>
+                  <p class="card__meta">按页浏览学习笔记，页码与题目来源一致。</p>
                 </div>
               </div>
             </div>

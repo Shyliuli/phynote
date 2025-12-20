@@ -1,5 +1,5 @@
 (function () {
-  const STORAGE_PREFIX = "em_practice_";
+  const STORAGE_PREFIX = "online_learning_";
   const KEYS = {
     attempts: `${STORAGE_PREFIX}attempts_v1`,
     mistakes: `${STORAGE_PREFIX}mistakes_v1`,
