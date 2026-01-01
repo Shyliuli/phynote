@@ -265,8 +265,8 @@ function validateNotesSeed({ knowledge }) {
 }
 
 function main() {
-  const knowledge = readJson("project/data/knowledge.json");
-  const questionsData = readJson("project/data/questions.json");
+  const knowledge = readJson("project/data/physics/knowledge.json");
+  const questionsData = readJson("project/data/physics/questions.json");
 
   const knowledgeStats = validateKnowledge(knowledge);
   const questionStats = validateQuestions({ knowledge, questionsData });

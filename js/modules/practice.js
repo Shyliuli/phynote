@@ -29,7 +29,7 @@
     else session.answers.push(record);
   }
 
-  function renderKnowledgePointTags(question) {
+  function renderKnowledgePointTags(question, subject, buildSubjectPath) {
     const ids = question.knowledgePointIds || [];
     if (!ids.length) return "";
 
@@ -37,9 +37,10 @@
       .map((id) => {
         const kp = window.DataService.getKnowledgePointById(id);
         const name = kp ? kp.name : id;
-        return `<a class="tag" href="#/knowledge/${id}" title="查看知识点详情">${escapeHtml(
-          name,
-        )}</a>`;
+        return `<a class="tag" href="${buildSubjectPath(
+          subject,
+          `knowledge/${id}`,
+        )}" title="查看知识点详情">${escapeHtml(name)}</a>`;
       })
       .join("");
 
@@ -53,7 +54,11 @@
     return /^[A-D]$/.test(first) ? first : "";
   }
 
-  window.PracticePage.renderSettings = function renderPracticeSettings({ app }) {
+  window.PracticePage.renderSettings = function renderPracticeSettings({
+    app,
+    subject,
+    buildSubjectPath,
+  }) {
     const chapters = window.DataService.getChapters();
 
     const query = window.Router.getCurrentRoute()?.query || {};
@@ -82,6 +87,7 @@
                 <select id="typeSelect">
                   <option value="all">全部题型</option>
                   <option value="choice">选择题</option>
+                  <option value="multi">多选题</option>
                   <option value="judge">判断题</option>
                   <option value="fill">填空题</option>
                   <option value="short">简答题（含计算题）</option>
@@ -134,6 +140,7 @@
     function getSelectedTypes() {
       const value = String(typeSelect.value || "all");
       if (value === "choice") return ["选择题"];
+      if (value === "multi") return ["多选题"];
       if (value === "judge") return ["判断题"];
       if (value === "fill") return ["填空题"];
       if (value === "short") return ["简答题", "计算题"];
@@ -263,7 +270,7 @@
       window.StorageService.setSession(session);
       window.StorageService.setSettings({ lastPracticeSettings: settings });
 
-      window.Router.navigate("/practice/session");
+      window.Router.navigate(buildSubjectPath(subject, "practice/session"));
     }
 
     chapterSelect.value = preselectChapterId === "all" ? "all" : preselectChapterId;
@@ -279,7 +286,12 @@
     updateKnowledgePointChecklist();
   };
 
-  window.PracticePage.renderSession = function renderPracticeSession({ app }) {
+  window.PracticePage.renderSession = function renderPracticeSession({
+    app,
+    subject,
+    buildSubjectPath,
+    buildNotesUrl,
+  }) {
     const session = window.StorageService.getSession();
     if (!session || !Array.isArray(session.questionIds) || !session.questionIds.length) {
       app.innerHTML = `
@@ -287,7 +299,7 @@
           <h1 class="page__title">答题页</h1>
           <div class="card"><div class="card__body">
             <p class="muted" style="margin-top: 0;">未找到进行中的练习，请先到练习中心出题。</p>
-            <a class="btn" href="#/practice">去出题</a>
+            <a class="btn" href="${buildSubjectPath(subject, "practice")}">去出题</a>
           </div></div>
         </section>
       `;
@@ -312,7 +324,7 @@
         <section class="page">
           <h1 class="page__title">题目不存在</h1>
           <p class="muted" style="margin: 0;">题目ID：${escapeHtml(questionId)}</p>
-          <div style="margin-top: 12px;"><a class="btn" href="#/practice">返回练习中心</a></div>
+          <div style="margin-top: 12px;"><a class="btn" href="${buildSubjectPath(subject, "practice")}">返回练习中心</a></div>
         </section>
       `;
       return;
@@ -330,7 +342,7 @@
 
     const sourcePage = Number(question.sourcePage);
     const sourceHtml = Number.isInteger(sourcePage)
-      ? `<a class="muted link" href="notes.html?page=${escapeHtml(sourcePage)}">来源：第 ${escapeHtml(
+      ? `<a class="muted link" href="${buildNotesUrl(subject, sourcePage)}">来源：第 ${escapeHtml(
           sourcePage,
         )} 页</a>`
       : "";
@@ -347,7 +359,7 @@
             </div>
 
             <div style="margin-top: 12px;">
-              ${renderKnowledgePointTags(question)}
+              ${renderKnowledgePointTags(question, subject, buildSubjectPath)}
               ${sourceHtml ? `<p class="muted" style="margin: 8px 0 0;">${sourceHtml}</p>` : ""}
             </div>
 
@@ -407,6 +419,20 @@
             return `
               <label class="option">
                 <input type="radio" name="choice" value="${escapeHtml(letter)}" ${checked} />
+                <span>${escapeHtml(opt)}</span>
+              </label>
+            `;
+          })
+          .join("");
+        answerArea.innerHTML = `<div class="options">${optionsHtml}</div>`;
+      } else if (type === "多选题") {
+        const optionsHtml = (question.options || [])
+          .map((opt) => {
+            const letter = parseChoiceLetter(opt);
+            const checked = existingRecord && String(existingRecord.userAnswer || "").includes(letter) ? "checked" : "";
+            return `
+              <label class="option">
+                <input type="checkbox" name="multi" value="${escapeHtml(letter)}" ${checked} />
                 <span>${escapeHtml(opt)}</span>
               </label>
             `;
@@ -568,6 +594,14 @@
         const checked = answerArea.querySelector("input[name=\"choice\"]:checked");
         return checked ? checked.value : "";
       }
+      if (type === "多选题") {
+        const inputs = answerArea.querySelectorAll("input[name=\"multi\"]:checked");
+        const letters = Array.from(inputs)
+          .map((el) => String(el.value || "").trim().toUpperCase())
+          .filter(Boolean);
+        letters.sort();
+        return letters.join("");
+      }
       if (type === "判断题") {
         const hidden = document.getElementById("judgeValue");
         return hidden ? hidden.value : "";
@@ -582,6 +616,17 @@
 
     function evaluateObjectiveAnswer(userAnswer) {
       if (type === "选择题") return String(userAnswer).trim().toUpperCase() === String(question.answer).trim();
+      if (type === "多选题") {
+        const expected = String(question.answer || "").trim().toUpperCase().split("").filter(Boolean);
+        const actual = String(userAnswer || "").trim().toUpperCase().split("").filter(Boolean);
+        const expectedSet = new Set(expected);
+        const actualSet = new Set(actual);
+        if (expectedSet.size !== actualSet.size) return false;
+        for (const item of expectedSet) {
+          if (!actualSet.has(item)) return false;
+        }
+        return true;
+      }
       if (type === "判断题") return String(userAnswer).trim() === String(question.answer).trim();
       if (type === "填空题") {
         return normalizeAnswerText(userAnswer) === normalizeAnswerText(question.answer);
@@ -652,13 +697,13 @@
       session.currentQuestionId = null;
       session.currentQuestionStartedAt = null;
       setSession(session);
-      window.Router.navigate(`/practice/session?i=${session.currentIndex}&t=${Date.now()}`);
+      window.Router.navigate(buildSubjectPath(subject, `practice/session?i=${session.currentIndex}&t=${Date.now()}`));
     }
 
     function finish() {
       session.finishedAt = Date.now();
       setSession(session);
-      window.Router.navigate("/practice/result");
+      window.Router.navigate(buildSubjectPath(subject, "practice/result"));
     }
 
     submitBtn.addEventListener("click", handleSubmit);
@@ -676,7 +721,12 @@
     }
   };
 
-  window.PracticePage.renderResult = function renderPracticeResult({ app }) {
+  window.PracticePage.renderResult = function renderPracticeResult({
+    app,
+    subject,
+    buildSubjectPath,
+    buildNotesUrl,
+  }) {
     const session = window.StorageService.getSession();
     if (!session || !Array.isArray(session.questionIds) || !session.questionIds.length) {
       app.innerHTML = `
@@ -684,7 +734,7 @@
           <h1 class="page__title">结果页</h1>
           <div class="card"><div class="card__body">
             <p class="muted" style="margin-top: 0;">未找到可展示的练习结果，请先完成一组练习。</p>
-            <a class="btn" href="#/practice">去练习中心</a>
+            <a class="btn" href="${buildSubjectPath(subject, "practice")}">去练习中心</a>
           </div></div>
         </section>
       `;
@@ -748,11 +798,12 @@
                     )}">${escapeHtml(btnText)}</button>
                     ${
                       Number.isInteger(q.sourcePage)
-                        ? `<a class="btn btn--ghost" href="notes.html?page=${escapeHtml(q.sourcePage)}">看笔记</a>`
+                        ? `<a class="btn btn--ghost" href="${buildNotesUrl(subject, q.sourcePage)}">看笔记</a>`
                         : ""
                     }
-                    <a class="btn btn--ghost" href="#/practice/session?jump=${escapeHtml(
-                      id,
+                    <a class="btn btn--ghost" href="${buildSubjectPath(
+                      subject,
+                      `practice/session?jump=${escapeHtml(id)}`,
                     )}">回到题目</a>
                   </div>
                 </div>
@@ -780,9 +831,9 @@
             ${warningHtml}
 
             <div style="margin-top: 14px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn" href="#/practice">再做一组</a>
-              <a class="btn btn--ghost" href="#/mistakes">查看错题本</a>
-              <a class="btn btn--ghost" href="#/">返回首页</a>
+              <a class="btn" href="${buildSubjectPath(subject, "practice")}">再做一组</a>
+              <a class="btn btn--ghost" href="${buildSubjectPath(subject, "mistakes")}">查看错题本</a>
+              <a class="btn btn--ghost" href="${buildSubjectPath(subject, "home")}">返回首页</a>
             </div>
           </div>
         </div>

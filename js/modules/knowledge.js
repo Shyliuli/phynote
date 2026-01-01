@@ -1,7 +1,7 @@
 (function () {
   window.KnowledgePage = window.KnowledgePage || {};
 
-  window.KnowledgePage.renderList = function renderKnowledgeList({ app }) {
+  window.KnowledgePage.renderList = function renderKnowledgeList({ app, subject, buildSubjectPath }) {
     const chapters = window.DataService.getChapters();
 
     app.innerHTML = `
@@ -75,7 +75,7 @@
                 .join("｜");
 
               return `
-                <a class="card card--link" href="#/knowledge/${kp.id}">
+                <a class="card card--link" href="${buildSubjectPath(subject, `knowledge/${kp.id}`)}">
                   <div class="card__body">
                     <div class="card__row">
                       <div class="card__icon" style="background: rgba(124, 58, 237, 0.12); color: #7c3aed;">知</div>
@@ -107,7 +107,13 @@
     renderList("");
   };
 
-  window.KnowledgePage.renderDetail = function renderKnowledgeDetail({ app, route }) {
+  window.KnowledgePage.renderDetail = function renderKnowledgeDetail({
+    app,
+    route,
+    subject,
+    buildSubjectPath,
+    buildNotesUrl,
+  }) {
     const id = route?.params?.knowledgePointId || "";
     const kp = id ? window.DataService.getKnowledgePointById(id) : null;
 
@@ -125,7 +131,7 @@
         <section class="page">
           <h1 class="page__title">知识点不存在</h1>
           <p class="muted" style="margin: 0;">知识点ID：${escapeHtml(id)}</p>
-          <div style="margin-top: 12px;"><a class="btn" href="#/knowledge">返回列表</a></div>
+          <div style="margin-top: 12px;"><a class="btn" href="${buildSubjectPath(subject, "knowledge")}">返回列表</a></div>
         </section>
       `;
       return;
@@ -147,7 +153,7 @@
     app.innerHTML = `
       <section class="page">
         <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-          <a class="btn btn--ghost" href="#/knowledge">返回</a>
+          <a class="btn btn--ghost" href="${buildSubjectPath(subject, "knowledge")}">返回</a>
           <span class="muted">${escapeHtml(chapterName)}</span>
         </div>
 
@@ -155,7 +161,8 @@
         <div class="pills" style="margin-top: 8px;">
           ${
             startPage
-              ? `<a class="pill pill--ghost" href="notes.html?page=${escapeHtml(
+              ? `<a class="pill pill--ghost" href="${buildNotesUrl(
+                  subject,
                   startPage,
                 )}" title="打开对应笔记页">页码：${escapeHtml(kp.pageRange || "—")}</a>`
               : `<span class="pill pill--ghost">页码：${escapeHtml(kp.pageRange || "—")}</span>`
@@ -190,10 +197,11 @@
             <div class="muted">基于该知识点的题目：${relatedCount} 道</div>
             <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
               ${
-                startPage ? `<a class="btn btn--ghost" href="notes.html?page=${escapeHtml(startPage)}">查看笔记</a>` : ""
+                startPage ? `<a class="btn btn--ghost" href="${buildNotesUrl(subject, startPage)}">查看笔记</a>` : ""
               }
-              <a class="btn" href="#/practice?chapterId=${escapeHtml(kp.chapterId || "")}&kp=${escapeHtml(
-                kp.id,
+              <a class="btn" href="${buildSubjectPath(
+                subject,
+                `practice?chapterId=${escapeHtml(kp.chapterId || "")}&kp=${escapeHtml(kp.id)}`,
               )}">开始练习</a>
             </div>
           </div>

@@ -1,7 +1,7 @@
 (function () {
   window.ProgressPage = window.ProgressPage || {};
 
-  window.ProgressPage.render = function renderProgress({ app }) {
+  window.ProgressPage.render = function renderProgress({ app, subject, buildSubjectPath }) {
     const viewFromQuery = window.Router.getCurrentRoute()?.query?.view;
     let activeView = viewFromQuery === "kp" ? "kp" : "page";
 
@@ -137,7 +137,10 @@
                 </div>
                 <div class="muted" style="font-size: 12px; font-weight: 800; min-width: 46px; text-align: right;">${percent}%</div>
               </div>
-              <a class="btn btn--ghost" href="#/knowledge/${escapeHtml(row.kp.id)}">详情</a>
+              <a class="btn btn--ghost" href="${buildSubjectPath(
+                subject,
+                `knowledge/${escapeHtml(row.kp.id)}`,
+              )}">详情</a>
             </div>
           `;
         })

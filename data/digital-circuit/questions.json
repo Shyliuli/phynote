@@ -1,0 +1,510 @@
+{
+  "questions": [
+    {
+      "id": "qdc001",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "十进制数 9 的 8421 BCD 码表示为：",
+      "options": [
+        "A. 1000",
+        "B. 1001",
+        "C. 1010",
+        "D. 1111"
+      ],
+      "answer": "B",
+      "explanation": "8421 BCD 码中 9 对应 1001。"
+    },
+    {
+      "id": "qdc002",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "余3码属于有权码。",
+      "answer": "错",
+      "explanation": "余3码没有固定权值，属于无权码。"
+    },
+    {
+      "id": "qdc003",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp006"
+      ],
+      "sourcePage": 6,
+      "content": "格雷码的相邻码字只相差 ____ 位。",
+      "answer": "1",
+      "explanation": "格雷码的核心特性是相邻码仅有一位不同。"
+    },
+    {
+      "id": "qdc004",
+      "type": "多选题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "以下哪些属于常用 BCD 码？",
+      "options": [
+        "A. 8421 码",
+        "B. 2421 码",
+        "C. 余3码",
+        "D. 格雷码"
+      ],
+      "answer": "ABC",
+      "explanation": "8421、2421 和 余3码都属于 BCD 码，格雷码是另一类编码。"
+    },
+    {
+      "id": "qdc005",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp008"
+      ],
+      "sourcePage": 8,
+      "content": "异或运算的输出为 1 的条件是：",
+      "options": [
+        "A. 两个输入相同",
+        "B. 两个输入不同",
+        "C. 两个输入全为 1",
+        "D. 任意一个输入为 1"
+      ],
+      "answer": "B",
+      "explanation": "异或在输入不同（一个 0 一个 1）时输出 1。"
+    },
+    {
+      "id": "qdc006",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "将十进制数字编码为二进制码的表示方式通常称为 ____ 码。",
+      "answer": "BCD",
+      "explanation": "BCD 码用于用二进制表示十进制数字。"
+    },
+    {
+      "id": "qdc007",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp011"
+      ],
+      "sourcePage": 11,
+      "content": "与非门（NAND）的输出为 0 的条件是：",
+      "options": [
+        "A. 任意一个输入为 0",
+        "B. 两个输入都为 1",
+        "C. 两个输入都为 0",
+        "D. 任意一个输入为 1"
+      ],
+      "answer": "B",
+      "explanation": "与非门是对与运算取反，只有输入全 1 时输出 0。"
+    },
+    {
+      "id": "qdc008",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp011"
+      ],
+      "sourcePage": 11,
+      "content": "与非门和或非门都是通用门。",
+      "answer": "对",
+      "explanation": "NAND 和 NOR 都可以实现任意逻辑功能。"
+    },
+    {
+      "id": "qdc009",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp011"
+      ],
+      "sourcePage": 11,
+      "content": "三态门的第三种输出状态是 ____ 状态。",
+      "answer": "高阻",
+      "explanation": "三态门输出除了 0/1 还可进入高阻态。"
+    },
+    {
+      "id": "qdc010",
+      "type": "多选题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp010"
+      ],
+      "sourcePage": 10,
+      "content": "以下哪些属于基本逻辑门？",
+      "options": [
+        "A. 与门",
+        "B. 或门",
+        "C. 非门",
+        "D. 异或门"
+      ],
+      "answer": "ABC",
+      "explanation": "与、或、非是基本逻辑门，异或为复合逻辑门。"
+    },
+    {
+      "id": "qdc011",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp018"
+      ],
+      "sourcePage": 18,
+      "content": "OC 门输出要获得高电平通常需要外接 ____。",
+      "answer": "上拉电阻",
+      "explanation": "开集电极输出本身不能拉高，需要上拉电阻提供高电平。"
+    },
+    {
+      "id": "qdc012",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp008"
+      ],
+      "sourcePage": 8,
+      "content": "异或运算满足 A ⊕ A = 1。",
+      "answer": "错",
+      "explanation": "A ⊕ A 恒为 0。"
+    },
+    {
+      "id": "qdc013",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp026"
+      ],
+      "sourcePage": 26,
+      "content": "布尔代数中，A + A' 的结果为：",
+      "options": [
+        "A. 0",
+        "B. 1",
+        "C. A",
+        "D. A'"
+      ],
+      "answer": "B",
+      "explanation": "互补律：A + A' = 1。"
+    },
+    {
+      "id": "qdc014",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp027"
+      ],
+      "sourcePage": 27,
+      "content": "卡诺图化简时可以利用无关项进行进一步化简。",
+      "answer": "对",
+      "explanation": "无关项可视作 0 或 1 以获得更简洁表达式。"
+    },
+    {
+      "id": "qdc015",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp026"
+      ],
+      "sourcePage": 26,
+      "content": "布尔代数中 A · 1 = ____。",
+      "answer": "A",
+      "explanation": "同一律：A·1=A。"
+    },
+    {
+      "id": "qdc016",
+      "type": "多选题",
+      "difficulty": "中等",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp026"
+      ],
+      "sourcePage": 26,
+      "content": "以下哪些属于布尔代数的基本定律？",
+      "options": [
+        "A. 交换律",
+        "B. 结合律",
+        "C. 分配律",
+        "D. 拉普拉斯变换"
+      ],
+      "answer": "ABC",
+      "explanation": "交换、结合、分配是基本定律，拉普拉斯变换不是布尔代数内容。"
+    },
+    {
+      "id": "qdc017",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 50,
+      "content": "n 输入译码器的输出线数为：",
+      "options": [
+        "A. n",
+        "B. 2n",
+        "C. 2^n",
+        "D. n^2"
+      ],
+      "answer": "C",
+      "explanation": "译码器将 n 位编码译为 2^n 条独热输出。"
+    },
+    {
+      "id": "qdc018",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 50,
+      "content": "8 选 1 数据选择器需要 3 根选择线。",
+      "answer": "对",
+      "explanation": "8=2^3，需要 3 位选择信号。"
+    },
+    {
+      "id": "qdc019",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 50,
+      "content": "全加器的两个输出分别为和与 ____。",
+      "answer": "进位",
+      "explanation": "全加器输出为 Sum 与 Carry。"
+    },
+    {
+      "id": "qdc020",
+      "type": "多选题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 50,
+      "content": "以下哪些属于常用的组合逻辑部件？",
+      "options": [
+        "A. 编码器",
+        "B. 译码器",
+        "C. 数据选择器",
+        "D. 触发器"
+      ],
+      "answer": "ABC",
+      "explanation": "编码器、译码器、数据选择器属于组合逻辑，触发器为时序逻辑。"
+    },
+    {
+      "id": "qdc021",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch004",
+      "knowledgePointIds": [
+        "kp050"
+      ],
+      "sourcePage": 50,
+      "content": "优先编码器的特点是：",
+      "options": [
+        "A. 只允许单个输入为 1",
+        "B. 多个输入为 1 时输出最高优先级编码",
+        "C. 输出为独热码",
+        "D. 输出仅与输入数量有关"
+      ],
+      "answer": "B",
+      "explanation": "优先编码器会按优先级选择输出编码。"
+    },
+    {
+      "id": "qdc022",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp097"
+      ],
+      "sourcePage": 97,
+      "content": "JK 触发器在 J=K=1 时输出翻转。",
+      "answer": "对",
+      "explanation": "JK 触发器的翻转特性来自 J=K=1。"
+    },
+    {
+      "id": "qdc023",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp090"
+      ],
+      "sourcePage": 90,
+      "content": "D 触发器在有效触发沿到来时，下一状态 Q+ 等于：",
+      "options": [
+        "A. J",
+        "B. K",
+        "C. D",
+        "D. T"
+      ],
+      "answer": "C",
+      "explanation": "D 触发器直接把 D 端输入锁存到 Q。"
+    },
+    {
+      "id": "qdc024",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp093"
+      ],
+      "sourcePage": 93,
+      "content": "T 触发器的特性是每次触发输出都会 ____。",
+      "answer": "翻转",
+      "explanation": "T 触发器每次有效触发都会翻转。"
+    },
+    {
+      "id": "qdc025",
+      "type": "多选题",
+      "difficulty": "简单",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp077"
+      ],
+      "sourcePage": 77,
+      "content": "以下哪些是常见的触发器类型？",
+      "options": [
+        "A. SR 触发器",
+        "B. JK 触发器",
+        "C. D 触发器",
+        "D. T 触发器"
+      ],
+      "answer": "ABCD",
+      "explanation": "SR、JK、D、T 都是常见触发器。"
+    },
+    {
+      "id": "qdc026",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp080"
+      ],
+      "sourcePage": 80,
+      "content": "同步时序电路的特点是各触发器：",
+      "options": [
+        "A. 时钟信号各不相同",
+        "B. 由前一级输出驱动时钟",
+        "C. 使用同一个时钟信号",
+        "D. 不需要时钟"
+      ],
+      "answer": "C",
+      "explanation": "同步时序电路所有触发器共用同一时钟。"
+    },
+    {
+      "id": "qdc027",
+      "type": "判断题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp082"
+      ],
+      "sourcePage": 82,
+      "content": "异步计数器的各级触发器时钟来自前一级输出，因此存在累积延迟。",
+      "answer": "对",
+      "explanation": "异步（脉动）计数器逐级触发，延迟会累积。"
+    },
+    {
+      "id": "qdc028",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch005",
+      "knowledgePointIds": [
+        "kp082"
+      ],
+      "sourcePage": 82,
+      "content": "计数器在系统中常用于实现 ____ 分频。",
+      "answer": "频率",
+      "explanation": "计数器可以对时钟进行分频。"
+    },
+    {
+      "id": "qdc029",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp106"
+      ],
+      "sourcePage": 106,
+      "content": "移位寄存器可用于串行与并行数据的转换。",
+      "answer": "对",
+      "explanation": "移位寄存器能实现串并转换。"
+    },
+    {
+      "id": "qdc030",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp106"
+      ],
+      "sourcePage": 106,
+      "content": "将串行数据转换为并行数据的过程通常称为 ____ 转换。",
+      "answer": "串并",
+      "explanation": "串行到并行简称串并转换。"
+    },
+    {
+      "id": "qdc031",
+      "type": "选择题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp106"
+      ],
+      "sourcePage": 106,
+      "content": "时序电路的分析常用的表示方法是：",
+      "options": [
+        "A. 状态转移表/状态图",
+        "B. 频谱图",
+        "C. 相量图",
+        "D. 直方图"
+      ],
+      "answer": "A",
+      "explanation": "时序电路常用状态表或状态图描述。"
+    },
+    {
+      "id": "qdc032",
+      "type": "多选题",
+      "difficulty": "中等",
+      "chapterId": "ch006",
+      "knowledgePointIds": [
+        "kp106"
+      ],
+      "sourcePage": 106,
+      "content": "以下哪些属于时序电路的典型功能？",
+      "options": [
+        "A. 计数",
+        "B. 存储",
+        "C. 序列发生",
+        "D. 纯粹的逻辑加法"
+      ],
+      "answer": "ABC",
+      "explanation": "时序电路常用于计数、存储、序列发生等功能。"
+    }
+  ]
+}

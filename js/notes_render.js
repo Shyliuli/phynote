@@ -42,6 +42,7 @@
     chi: "χ",
     psi: "ψ",
     omega: "ω",
+    hbar: "ħ",
 
     Gamma: "Γ",
     Delta: "Δ",
@@ -64,6 +65,15 @@
 
     int: "∫",
     oint: "∮",
+    ge: "≥",
+    le: "≤",
+    approx: "≈",
+    ne: "≠",
+    pm: "±",
+    dots: "…",
+    cdots: "…",
+    ldots: "…",
+    circ: "°",
   };
 
   const LATEX_FUNCTIONS = new Set(["sin", "cos", "tan", "ln", "log"]);
@@ -105,6 +115,11 @@
       const num = parseMathGroup(state) || "";
       const den = parseMathGroup(state) || "";
       return `<span class="math-frac"><span class="math-num">${num}</span><span class="math-den">${den}</span></span>`;
+    }
+
+    if (name === "sqrt") {
+      const body = parseMathGroup(state) || "";
+      return `<span class="math-sqrt">√<span class="math-sqrt-body">${body}</span></span>`;
     }
 
     if (name === "vec") {

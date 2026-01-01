@@ -1,7 +1,7 @@
 (function () {
   window.StatsPage = window.StatsPage || {};
 
-  window.StatsPage.render = function renderStats({ app }) {
+  window.StatsPage.render = function renderStats({ app, subject, buildSubjectPath }) {
     const chapters = window.DataService.getChapters();
     const stats = window.StorageService.calculateStats();
     const summary = stats.summary;
@@ -39,7 +39,10 @@
                 <div class="bar"><div class="bar__fill" style="width:${p}%;"></div></div>
                 <div class="muted" style="font-size: 12px; font-weight: 800; min-width: 46px; text-align: right;">${p}%</div>
               </div>
-              <a class="btn btn--ghost" href="#/practice?chapterId=${escapeHtml(ch.id)}">练习</a>
+              <a class="btn btn--ghost" href="${buildSubjectPath(
+                subject,
+                `practice?chapterId=${escapeHtml(ch.id)}`,
+              )}">练习</a>
             </div>
           `;
         })
@@ -66,7 +69,10 @@
                   <div style="font-weight: 900;">${escapeHtml(name)}</div>
                   <div class="muted" style="font-size: 12px; margin-top: 2px;">正确 ${row.correct}/${row.total}（${p}%）</div>
                 </div>
-                <a class="btn" href="#/knowledge/${escapeHtml(row.knowledgePointId)}">查看详情</a>
+                <a class="btn" href="${buildSubjectPath(
+                  subject,
+                  `knowledge/${escapeHtml(row.knowledgePointId)}`,
+                )}">查看详情</a>
               </div>
             </div>
           `;

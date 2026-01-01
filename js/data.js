@@ -1,5 +1,8 @@
 (function () {
+  const DEFAULT_SUBJECT = "physics";
+  const KNOWN_SUBJECTS = new Set(["physics", "digital-circuit"]);
   const state = {
+    subject: DEFAULT_SUBJECT,
     loaded: false,
     knowledge: null,
     questions: [],
@@ -15,6 +18,36 @@
     if (!state.loaded) {
       throw new Error("DataService 未加载：请先调用 await DataService.load()");
     }
+  }
+
+  function normalizeSubject(subject) {
+    const normalized = String(subject || "").trim();
+    if (KNOWN_SUBJECTS.has(normalized)) return normalized;
+    return DEFAULT_SUBJECT;
+  }
+
+  function resetState() {
+    state.loaded = false;
+    state.knowledge = null;
+    state.questions = [];
+    state.chapterById = {};
+    state.knowledgePointById = {};
+    state.knowledgePointsByChapterId = {};
+    state.questionById = {};
+    state.questionsByChapterId = {};
+    state.kpToQuestionIds = {};
+  }
+
+  function setSubject(subject) {
+    const next = normalizeSubject(subject);
+    if (state.subject === next) return state.subject;
+    state.subject = next;
+    resetState();
+    return state.subject;
+  }
+
+  function getSubject() {
+    return state.subject;
   }
 
   function parsePageRange(pageRangeText) {
@@ -71,6 +104,14 @@
     }
   }
 
+  function resolveSeed(seed, subject) {
+    if (!seed || typeof seed !== "object") return null;
+    if (seed.subjects && seed.subjects[subject]) return seed.subjects[subject];
+    if (seed.subject === subject) return seed;
+    if (seed.knowledge && seed.questions && subject === DEFAULT_SUBJECT) return seed;
+    return null;
+  }
+
   async function load() {
     if (state.loaded) return state;
 
@@ -78,14 +119,17 @@
     let questionsData = null;
 
     const seed = window.__EM_APP_SEED__;
-    if (seed && seed.knowledge && seed.questions) {
-      knowledgeData = seed.knowledge;
-      questionsData = seed.questions;
+    const isFileProtocol = window.location.protocol === "file:";
+    const subject = normalizeSubject(state.subject);
+    const seedPayload = resolveSeed(seed, subject);
+    if (isFileProtocol && seedPayload && seedPayload.knowledge && seedPayload.questions) {
+      knowledgeData = seedPayload.knowledge;
+      questionsData = seedPayload.questions;
     } else {
       try {
         const [knowledgeRes, questionsRes] = await Promise.all([
-          fetch("data/knowledge.json"),
-          fetch("data/questions.json"),
+          fetch(`data/${subject}/knowledge.json`),
+          fetch(`data/${subject}/questions.json`),
         ]);
         knowledgeData = await knowledgeRes.json();
         questionsData = await questionsRes.json();
@@ -229,6 +273,8 @@
   }
 
   window.DataService = {
+    setSubject,
+    getSubject,
     load,
     parsePageRange,
 

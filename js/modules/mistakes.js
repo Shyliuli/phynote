@@ -1,7 +1,12 @@
 (function () {
   window.MistakesPage = window.MistakesPage || {};
 
-  window.MistakesPage.render = function renderMistakes({ app }) {
+  window.MistakesPage.render = function renderMistakes({
+    app,
+    subject,
+    buildSubjectPath,
+    buildNotesUrl,
+  }) {
     const chapters = window.DataService.getChapters();
     const allKnowledgePoints = window.DataService.listKnowledgePoints();
 
@@ -111,7 +116,7 @@
           list.innerHTML = `
             <div class="card"><div class="card__body">
               <p class="muted" style="margin-top: 0;">错题本还是空的：在练习结果页点击“收藏错题”即可加入。</p>
-              <a class="btn" href="#/practice">去练习中心</a>
+              <a class="btn" href="${buildSubjectPath(subject, "practice")}">去练习中心</a>
             </div></div>
           `;
           return;
@@ -146,7 +151,7 @@
                   <div style="margin-top: 10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
                     ${
                       Number.isInteger(q.sourcePage)
-                        ? `<a class="btn btn--ghost" href="notes.html?page=${escapeHtml(q.sourcePage)}">看笔记</a>`
+                        ? `<a class="btn btn--ghost" href="${buildNotesUrl(subject, q.sourcePage)}">看笔记</a>`
                         : ""
                     }
                     <button class="btn btn--ghost" type="button" data-remove-mistake="${escapeHtml(
@@ -177,7 +182,7 @@
             if (!qid) return;
             const session = buildSession([qid]);
             window.StorageService.setSession(session);
-            window.Router.navigate("/practice/session");
+            window.Router.navigate(buildSubjectPath(subject, "practice/session"));
           });
         }
       }
@@ -187,7 +192,7 @@
         if (!filtered.length) return;
         const session = buildSession(filtered.map((q) => q.id));
         window.StorageService.setSession(session);
-        window.Router.navigate("/practice/session");
+        window.Router.navigate(buildSubjectPath(subject, "practice/session"));
       }
 
       function clearAll() {

@@ -1,7 +1,7 @@
 (function () {
   window.HomePage = window.HomePage || {};
 
-  window.HomePage.render = function renderHome({ app }) {
+  window.HomePage.render = function renderHome({ app, subjectLabel, buildSubjectPath, buildNotesUrl, subject }) {
     const courseName = (() => {
       try {
         return window.DataService.getCourseName();
@@ -13,10 +13,10 @@
     app.innerHTML = `
       <section class="page">
         <h1 class="page__title">在线学习系统</h1>
-        <p class="muted" style="margin: 0;">课程：${courseName}</p>
+        <p class="muted" style="margin: 0;">学科：${subjectLabel}｜课程：${courseName}</p>
 
         <div class="grid" style="margin-top: 8px;">
-          <a class="card card--link" href="#/practice">
+          <a class="card card--link" href="${buildSubjectPath(subject, "practice")}">
             <div class="card__body">
               <div class="card__row">
                 <div class="card__icon" style="background: var(--primary-weak); color: var(--primary);">练</div>
@@ -28,7 +28,7 @@
             </div>
           </a>
 
-          <a class="card card--link" href="#/knowledge">
+          <a class="card card--link" href="${buildSubjectPath(subject, "knowledge")}">
             <div class="card__body">
               <div class="card__row">
                 <div class="card__icon" style="background: rgba(124, 58, 237, 0.12); color: #7c3aed;">知</div>
@@ -40,7 +40,7 @@
             </div>
           </a>
 
-          <a class="card card--link" href="notes.html">
+          <a class="card card--link" href="${buildNotesUrl(subject)}">
             <div class="card__body">
               <div class="card__row">
                 <div class="card__icon" style="background: rgba(37, 99, 235, 0.12); color: var(--primary);">笔</div>
@@ -52,7 +52,7 @@
             </div>
           </a>
 
-          <a class="card card--link" href="#/mistakes">
+          <a class="card card--link" href="${buildSubjectPath(subject, "mistakes")}">
             <div class="card__body">
               <div class="card__row">
                 <div class="card__icon" style="background: rgba(220, 38, 38, 0.12); color: var(--danger);">错</div>
@@ -64,7 +64,7 @@
             </div>
           </a>
 
-          <a class="card card--link" href="#/progress">
+          <a class="card card--link" href="${buildSubjectPath(subject, "progress")}">
             <div class="card__body">
               <div class="card__row">
                 <div class="card__icon" style="background: rgba(22, 163, 74, 0.12); color: var(--success);">进</div>
@@ -76,7 +76,7 @@
             </div>
           </a>
 
-          <a class="card card--link" href="#/stats">
+          <a class="card card--link" href="${buildSubjectPath(subject, "stats")}">
             <div class="card__body">
               <div class="card__row">
                 <div class="card__icon" style="background: rgba(245, 158, 11, 0.14); color: var(--warning);">统</div>

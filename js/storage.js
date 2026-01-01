@@ -1,11 +1,62 @@
 (function () {
-  const STORAGE_PREFIX = "online_learning_";
-  const KEYS = {
-    attempts: `${STORAGE_PREFIX}attempts_v1`,
-    mistakes: `${STORAGE_PREFIX}mistakes_v1`,
-    settings: `${STORAGE_PREFIX}settings_v1`,
-    session: `${STORAGE_PREFIX}session_v1`,
+  const DEFAULT_SUBJECT = "physics";
+  const KNOWN_SUBJECTS = new Set(["physics", "digital-circuit"]);
+  const LEGACY_KEYS = {
+    attempts: "online_learning_attempts_v1",
+    mistakes: "online_learning_mistakes_v1",
+    settings: "online_learning_settings_v1",
+    session: "online_learning_session_v1",
   };
+  const state = {
+    subject: DEFAULT_SUBJECT,
+    keys: buildKeys(DEFAULT_SUBJECT),
+  };
+
+  function normalizeSubject(subject) {
+    const normalized = String(subject || "").trim();
+    if (KNOWN_SUBJECTS.has(normalized)) return normalized;
+    return DEFAULT_SUBJECT;
+  }
+
+  function buildKeys(subject) {
+    const prefix = `${subject}:`;
+    return {
+      attempts: `${prefix}attempts_v1`,
+      mistakes: `${prefix}mistakes_v1`,
+      settings: `${prefix}settings_v1`,
+      session: `${prefix}session_v1`,
+    };
+  }
+
+  function maybeMigrateLegacyKeys() {
+    if (state.subject !== DEFAULT_SUBJECT) return;
+    const entries = Object.entries(LEGACY_KEYS);
+    for (const [keyName, legacyKey] of entries) {
+      const nextKey = state.keys[keyName];
+      if (window.localStorage.getItem(nextKey) != null) continue;
+      const legacyValue = window.localStorage.getItem(legacyKey);
+      if (legacyValue == null) continue;
+      window.localStorage.setItem(nextKey, legacyValue);
+    }
+  }
+
+  function setSubject(subject) {
+    const next = normalizeSubject(subject);
+    if (state.subject === next) return state.subject;
+    state.subject = next;
+    state.keys = buildKeys(next);
+    maybeMigrateLegacyKeys();
+    if (window.StorageService) {
+      window.StorageService.KEYS = state.keys;
+    }
+    return state.subject;
+  }
+
+  function getSubject() {
+    return state.subject;
+  }
+
+  maybeMigrateLegacyKeys();
 
   function safeParseJson(text, fallbackValue) {
     try {
@@ -35,13 +86,13 @@
   }
 
   function getAttempts() {
-    return readJson(KEYS.attempts, []);
+    return readJson(state.keys.attempts, []);
   }
 
   function addAttempt(attempt) {
     const attempts = getAttempts();
     attempts.push(attempt);
-    writeJson(KEYS.attempts, attempts);
+    writeJson(state.keys.attempts, attempts);
     return attempt;
   }
 
@@ -72,11 +123,11 @@
   }
 
   function clearAttempts() {
-    writeJson(KEYS.attempts, []);
+    writeJson(state.keys.attempts, []);
   }
 
   function getMistakes() {
-    return readJson(KEYS.mistakes, []);
+    return readJson(state.keys.mistakes, []);
   }
 
   function hasMistake(questionId) {
@@ -89,14 +140,14 @@
     const mistakes = getMistakes();
     if (mistakes.some((m) => m.questionId === id)) return mistakes;
     mistakes.push({ questionId: id, addedAt: nowMs() });
-    writeJson(KEYS.mistakes, mistakes);
+    writeJson(state.keys.mistakes, mistakes);
     return mistakes;
   }
 
   function removeMistake(questionId) {
     const id = String(questionId || "").trim();
     const mistakes = getMistakes().filter((m) => m.questionId !== id);
-    writeJson(KEYS.mistakes, mistakes);
+    writeJson(state.keys.mistakes, mistakes);
     return mistakes;
   }
 
@@ -105,31 +156,31 @@
   }
 
   function clearMistakes() {
-    writeJson(KEYS.mistakes, []);
+    writeJson(state.keys.mistakes, []);
   }
 
   function getSettings() {
-    return readJson(KEYS.settings, {});
+    return readJson(state.keys.settings, {});
   }
 
   function setSettings(partialSettings) {
     const current = getSettings();
     const next = { ...current, ...(partialSettings || {}) };
-    writeJson(KEYS.settings, next);
+    writeJson(state.keys.settings, next);
     return next;
   }
 
   function getSession() {
-    return readJson(KEYS.session, null);
+    return readJson(state.keys.session, null);
   }
 
   function setSession(sessionData) {
-    writeJson(KEYS.session, sessionData || null);
+    writeJson(state.keys.session, sessionData || null);
     return sessionData || null;
   }
 
   function clearSession() {
-    writeJson(KEYS.session, null);
+    writeJson(state.keys.session, null);
   }
 
   function toDateKey(timestampMs) {
@@ -229,14 +280,16 @@
   }
 
   function resetAll() {
-    window.localStorage.removeItem(KEYS.attempts);
-    window.localStorage.removeItem(KEYS.mistakes);
-    window.localStorage.removeItem(KEYS.settings);
-    window.localStorage.removeItem(KEYS.session);
+    window.localStorage.removeItem(state.keys.attempts);
+    window.localStorage.removeItem(state.keys.mistakes);
+    window.localStorage.removeItem(state.keys.settings);
+    window.localStorage.removeItem(state.keys.session);
   }
 
   window.StorageService = {
-    KEYS,
+    setSubject,
+    getSubject,
+    KEYS: state.keys,
 
     getAttempts,
     recordAnswer,

@@ -1,4 +1,15 @@
 (function () {
+  const DEFAULT_SUBJECT = "physics";
+  const SUBJECTS = new Set(["physics", "digital-circuit"]);
+  const LEGACY_PAGES = new Set([
+    "home",
+    "practice",
+    "knowledge",
+    "mistakes",
+    "progress",
+    "stats",
+    "notes",
+  ]);
   const state = {
     initialized: false,
     current: null,
@@ -39,14 +50,39 @@
       segments,
       query,
       params: {},
+      subject: null,
     };
 
-    if (segments.length === 0) {
+    if (segments.length === 0 || segments[0] === "select") {
+      route.name = "subject-select";
+      return route;
+    }
+
+    let subject = null;
+    let restSegments = segments;
+    if (SUBJECTS.has(segments[0])) {
+      subject = segments[0];
+      restSegments = segments.slice(1);
+    } else if (LEGACY_PAGES.has(segments[0])) {
+      subject = DEFAULT_SUBJECT;
+      restSegments = segments.slice();
+    } else {
+      return route;
+    }
+
+    route.subject = subject;
+
+    if (restSegments.length === 0) {
       route.name = "home";
       return route;
     }
 
-    const [head, second] = segments;
+    const [head, second] = restSegments;
+
+    if (head === "home") {
+      route.name = "home";
+      return route;
+    }
 
     if (head === "practice") {
       if (second === "session") route.name = "practice-session";

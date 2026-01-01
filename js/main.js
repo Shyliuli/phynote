@@ -3,14 +3,52 @@
   const nav = document.getElementById("nav");
   const navToggle = document.getElementById("navToggle");
 
-  nav.innerHTML = `
-    <a href="#/practice">练习中心</a>
-    <a href="#/knowledge">知识点库</a>
-    <a href="notes.html">复习笔记</a>
-    <a href="#/mistakes">错题本</a>
-    <a href="#/progress">学习进度</a>
-    <a href="#/stats">统计分析</a>
-  `;
+  const SUBJECT_LABELS = {
+    physics: "物理",
+    "digital-circuit": "数字电路",
+  };
+
+  function getSubjectLabel(subject) {
+    return SUBJECT_LABELS[subject] || "学科";
+  }
+
+  function buildSubjectPath(subject, path) {
+    const normalizedSubject = String(subject || "").trim();
+    const normalizedPath = String(path || "").trim().replace(/^\/+/, "");
+    return `#/${normalizedSubject}/${normalizedPath}`;
+  }
+
+  function buildNotesUrl(subject, page) {
+    const normalizedSubject = String(subject || "").trim();
+    const query = new URLSearchParams();
+    if (normalizedSubject) query.set("subject", normalizedSubject);
+    if (page != null && page !== "") query.set("page", String(page));
+    const queryText = query.toString();
+    return queryText ? `notes.html?${queryText}` : "notes.html";
+  }
+
+  window.AppRoutes = {
+    buildSubjectPath,
+    buildNotesUrl,
+    getSubjectLabel,
+  };
+
+  function renderNav(subject) {
+    if (!subject) {
+      nav.innerHTML = `<a href="#/select">选择学科</a>`;
+      return;
+    }
+
+    nav.innerHTML = `
+      <a href="#/select">切换学科</a>
+      <a href="${buildSubjectPath(subject, "practice")}">练习中心</a>
+      <a href="${buildSubjectPath(subject, "knowledge")}">知识点库</a>
+      <a href="${buildNotesUrl(subject)}">复习笔记</a>
+      <a href="${buildSubjectPath(subject, "mistakes")}">错题本</a>
+      <a href="${buildSubjectPath(subject, "progress")}">学习进度</a>
+      <a href="${buildSubjectPath(subject, "stats")}">统计分析</a>
+    `;
+  }
 
   function closeMobileNav() {
     document.body.classList.remove("nav-open");
@@ -72,6 +110,9 @@
   }
 
   function renderNotFound(route) {
+    const fallback = route?.subject
+      ? window.AppRoutes.buildSubjectPath(route.subject, "home")
+      : "/select";
     app.innerHTML = `
       <section class="page">
         <h1 class="page__title">页面不存在</h1>
@@ -80,15 +121,21 @@
       </section>
     `;
     const btn = document.getElementById("goHomeBtn");
-    if (btn) btn.addEventListener("click", () => window.Router.navigate("/"));
+    if (btn) btn.addEventListener("click", () => window.Router.navigate(fallback));
   }
 
   function renderRoute(route) {
     if (!route || !route.name) return renderNotFound({ path: "" });
 
+    if (route.name === "subject-select") return window.SubjectSelectPage.render?.({ app });
+
     const ctx = {
       app,
       route,
+      subject: route.subject,
+      subjectLabel: window.AppRoutes.getSubjectLabel(route.subject),
+      buildSubjectPath: window.AppRoutes.buildSubjectPath,
+      buildNotesUrl: window.AppRoutes.buildNotesUrl,
       DataService: window.DataService,
       StorageService: window.StorageService,
     };
@@ -96,7 +143,9 @@
     if (route.name === "notes-redirect") {
       const raw = route?.query?.page;
       const page = raw != null && raw !== "" ? String(raw) : "";
-      window.location.href = page ? `notes.html?page=${encodeURIComponent(page)}` : "notes.html";
+      const subject = route.subject || window.DataService.getSubject?.();
+      const target = window.AppRoutes.buildNotesUrl(subject, page);
+      window.location.href = target;
       return;
     }
 
@@ -114,47 +163,64 @@
   }
 
   function getNavPathByRoute(route) {
-    if (!route || !route.name) return null;
-    if (route.name.startsWith("practice")) return "/practice";
-    if (route.name.startsWith("knowledge")) return "/knowledge";
-    if (route.name === "mistakes") return "/mistakes";
-    if (route.name === "progress") return "/progress";
-    if (route.name === "stats") return "/stats";
+    if (!route || !route.name || !route.subject) return null;
+    const subject = route.subject;
+    if (route.name.startsWith("practice")) return window.AppRoutes.buildSubjectPath(subject, "practice");
+    if (route.name.startsWith("knowledge")) return window.AppRoutes.buildSubjectPath(subject, "knowledge");
+    if (route.name === "mistakes") return window.AppRoutes.buildSubjectPath(subject, "mistakes");
+    if (route.name === "progress") return window.AppRoutes.buildSubjectPath(subject, "progress");
+    if (route.name === "stats") return window.AppRoutes.buildSubjectPath(subject, "stats");
     return null;
   }
 
   function updateNavActive(route) {
     const activePath = getNavPathByRoute(route);
-    const links = nav.querySelectorAll("a[href^=\"#/\"]");
+    const links = nav.querySelectorAll("a");
     for (const link of links) {
       const href = link.getAttribute("href") || "";
-      const path = href.startsWith("#") ? href.slice(1) : href;
-      if (activePath && path === activePath) link.setAttribute("aria-current", "page");
+      if (activePath && href === activePath) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
     }
   }
 
-  async function bootstrap() {
-    renderLoading();
-    try {
-      await window.DataService.load();
-    } catch (err) {
-      renderError(err);
-      return;
-    }
+  let routeToken = 0;
 
-    window.Router.init({
-      onRoute: (route) => {
-        try {
-          updateNavActive(route);
-          closeMobileNav();
-          renderRoute(route);
-          animateApp();
-        } catch (err) {
-          renderError(err);
-        }
-      },
-    });
+  async function handleRoute(route) {
+    const token = (routeToken += 1);
+    try {
+      if (route?.name === "subject-select") {
+        renderNav(null);
+        updateNavActive(route);
+        closeMobileNav();
+        renderRoute(route);
+        animateApp();
+        return;
+      }
+
+      const subject = route?.subject || window.DataService.getSubject?.() || "physics";
+      window.DataService.setSubject(subject);
+      window.StorageService.setSubject(subject);
+
+      if (!window.DataService._state?.loaded) {
+        renderLoading();
+      }
+
+      await window.DataService.load();
+      if (token !== routeToken) return;
+
+      renderNav(subject);
+      updateNavActive(route);
+      closeMobileNav();
+      renderRoute(route);
+      animateApp();
+    } catch (err) {
+      if (token !== routeToken) return;
+      renderError(err);
+    }
+  }
+
+  function bootstrap() {
+    window.Router.init({ onRoute: handleRoute });
   }
 
   bootstrap();

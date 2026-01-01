@@ -250,13 +250,13 @@ function writeJson(path, obj) {
 }
 
 function writeAppSeed({ knowledge, questionsData, outPath }) {
-  const output = `// Auto-generated from project/data/knowledge.json and project/data/questions.json.\n// If you update the JSON files, re-generate this file so the app can run via file:// without fetch/CORS.\n(function () {\n  window.__EM_APP_SEED__ = {\n    knowledge: ${JSON.stringify(knowledge)},\n    questions: ${JSON.stringify(questionsData)},\n  };\n})();\n`;
+  const output = `// Auto-generated from project/data/physics/knowledge.json and project/data/physics/questions.json.\n// If you update the JSON files, re-generate this file so the app can run via file:// without fetch/CORS.\n(function () {\n  window.__EM_APP_SEED__ = {\n    knowledge: ${JSON.stringify(knowledge)},\n    questions: ${JSON.stringify(questionsData)},\n  };\n})();\n`;
   fs.writeFileSync(outPath, output, "utf8");
 }
 
 function main() {
-  const knowledgePath = "project/data/knowledge.json";
-  const questionsPath = "project/data/questions.json";
+  const knowledgePath = "project/data/physics/knowledge.json";
+  const questionsPath = "project/data/physics/questions.json";
   const markdownPaths = ["input/电磁学.md", "input/新增笔记.txt"];
   const outNotesSeedPath = "project/js/notes_seed.js";
   const outAppSeedPath = "project/js/data_seed.js";
@@ -404,7 +404,7 @@ function main() {
 
   const notesSeedOutput = `// Auto-generated from ${markdownPaths.join(
     " + ",
-  )} and project/data/knowledge.json. DO NOT EDIT.\n(function () {\n  window.__EM_NOTES_SEED__ = ${JSON.stringify(
+  )} and project/data/physics/knowledge.json. DO NOT EDIT.\n(function () {\n  window.__EM_NOTES_SEED__ = ${JSON.stringify(
     seed,
     null,
     2,

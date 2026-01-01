@@ -1,6 +1,5 @@
 (function () {
   const app = document.getElementById("notesApp");
-  const seed = window.__EM_NOTES_SEED__;
 
   function escapeHtml(text) {
     return String(text == null ? "" : text)
@@ -15,60 +14,48 @@
     throw new Error("notesApp 容器不存在");
   }
 
-  if (!seed || !Array.isArray(seed.pages) || !seed.pages.length) {
-    app.innerHTML = `
-      <section class="page">
-        <h1 class="page__title">复习笔记加载失败</h1>
-        <div class="card"><div class="card__body">
-          <p class="muted" style="margin: 0;">未找到内嵌笔记数据：请确认已加载 <code>js/notes_seed.js</code>。</p>
-        </div></div>
-      </section>
-    `;
-    return;
+  function parseSubjectFromLocation() {
+    const url = new URL(window.location.href);
+    const subject = url.searchParams.get("subject");
+    return subject || "physics";
   }
 
-  const totalPages = Number(seed.totalPages || seed.pages.length || 0) || 0;
-  const pageByNumber = {};
-  for (const p of seed.pages) {
-    const n = Number(p.page);
-    if (Number.isInteger(n)) pageByNumber[n] = p;
-  }
-
-  function clampPage(n) {
-    const num = Math.floor(Number(n));
-    if (!Number.isFinite(num) || num <= 0) return 1;
-    if (totalPages && num > totalPages) return totalPages;
-    return num;
+  function buildAppLink(subject, path) {
+    const normalized = String(path || "").trim().replace(/^\/+/, "");
+    return `index.html#/${subject}/${normalized}`;
   }
 
   function parsePageFromLocation() {
     const url = new URL(window.location.href);
     const q = url.searchParams.get("page");
-    if (q != null && q !== "") return clampPage(q);
+    if (q != null && q !== "") return Number(q);
     if (url.hash && url.hash.startsWith("#page=")) {
-      return clampPage(url.hash.slice("#page=".length));
+      return Number(url.hash.slice("#page=".length));
     }
     return 1;
   }
 
-  function setPageInLocation(page, { replace = false } = {}) {
+  function setPageInLocation(page, subject, { replace = false } = {}) {
     const url = new URL(window.location.href);
+    if (subject) url.searchParams.set("subject", String(subject));
     url.searchParams.set("page", String(page));
     url.hash = "";
     if (replace) window.history.replaceState({}, "", url.toString());
     else window.history.pushState({}, "", url.toString());
   }
 
-  function render(pageNumber) {
-    const page = pageByNumber[pageNumber];
+  function render(pageNumber, subject) {
+    const totalPages = window.NotesService.getTotalPages();
+    const page = window.NotesService.getPage(pageNumber);
+
     if (!page) {
       app.innerHTML = `
         <section class="page">
           <h1 class="page__title">未找到该页</h1>
           <p class="muted" style="margin: 0;">页码：${escapeHtml(pageNumber)}</p>
           <div style="margin-top: 12px;">
-            <a class="btn" href="notes.html?page=1">回到第一页</a>
-            <a class="btn btn--ghost" href="index.html#/">回到练习系统</a>
+            <a class="btn" href="notes.html?subject=${escapeHtml(subject)}&page=1">回到第一页</a>
+            <a class="btn btn--ghost" href="${buildAppLink(subject, "home")}">回到练习系统</a>
           </div>
         </section>
       `;
@@ -125,10 +112,12 @@
                   <div class="muted" style="margin-top: 4px;">${escapeHtml(kpName)}</div>
                 </div>
                 <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-                  <a class="btn btn--ghost" href="index.html#/">回到练习系统</a>
+                  <a class="btn btn--ghost" href="${buildAppLink(subject, "home")}">回到练习系统</a>
                   ${
                     kpId
-                      ? `<a class="btn" href="index.html#/knowledge/${escapeHtml(kpId)}">查看该知识点</a>`
+                      ? `<a class="btn" href="${buildAppLink(subject, `knowledge/${escapeHtml(
+                          kpId,
+                        )}`)}">查看该知识点</a>`
                       : ""
                   }
                 </div>
@@ -144,9 +133,9 @@
     `;
 
     function go(to) {
-      const p = clampPage(to);
-      setPageInLocation(p);
-      render(p);
+      const p = window.NotesService.clampPage(to);
+      setPageInLocation(p, subject);
+      render(p, subject);
     }
 
     const prevBtn = document.getElementById("prevBtn");
@@ -168,13 +157,33 @@
       });
   }
 
-  window.addEventListener("popstate", () => {
-    const page = parsePageFromLocation();
-    render(page);
-  });
+  async function bootstrap() {
+    const subject = parseSubjectFromLocation();
+    try {
+      if (!window.NotesService) throw new Error("NotesService 未加载");
+      window.NotesService.setSubject(subject);
+      await window.NotesService.load();
+    } catch (err) {
+      app.innerHTML = `
+        <section class="page">
+          <h1 class="page__title">复习笔记加载失败</h1>
+          <div class="card"><div class="card__body">
+            <pre style="white-space: pre-wrap; margin: 0;">${escapeHtml(String(err))}</pre>
+          </div></div>
+        </section>
+      `;
+      return;
+    }
 
-  const initialPage = parsePageFromLocation();
-  setPageInLocation(initialPage, { replace: true });
-  render(initialPage);
+    const initialPage = window.NotesService.clampPage(parsePageFromLocation());
+    setPageInLocation(initialPage, subject, { replace: true });
+    render(initialPage, subject);
+
+    window.addEventListener("popstate", () => {
+      const page = window.NotesService.clampPage(parsePageFromLocation());
+      render(page, subject);
+    });
+  }
+
+  bootstrap();
 })();
-
