@@ -30,6 +30,62 @@
     state.pageByNumber = {};
   }
 
+  function isListLine(line) {
+    const trimmed = String(line || "").trim();
+    return /^-\s+/.test(trimmed) || /^\d+\.\s+/.test(trimmed);
+  }
+
+  function sanitizeContent(raw) {
+    const text = String(raw == null ? "" : raw)
+      .replaceAll("\r\n", "\n")
+      .replaceAll("\r", "\n")
+      .replaceAll("\t", " ")
+      .replace(/[\uE000-\uF8FF]/g, "");
+
+    const lines = text.split("\n").map((line) => {
+      let next = line.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "");
+      next = next.replace(/\s+$/g, "");
+      const trimmed = next.trim();
+      if (!trimmed) return "";
+      if (trimmed === "-") return "";
+      if (!trimmed.startsWith("|")) {
+        next = next.replace(/\s{2,}/g, " ");
+      }
+      return next;
+    });
+
+    const filtered = [];
+    let lastNonBlank = "";
+    for (let i = 0; i < lines.length; i += 1) {
+      const line = lines[i];
+      if (!line.trim()) {
+        let nextNonBlank = "";
+        for (let j = i + 1; j < lines.length; j += 1) {
+          if (lines[j].trim()) {
+            nextNonBlank = lines[j];
+            break;
+          }
+        }
+        if (isListLine(lastNonBlank) && isListLine(nextNonBlank)) continue;
+        filtered.push("");
+        continue;
+      }
+      filtered.push(line);
+      lastNonBlank = line;
+    }
+
+    const collapsed = [];
+    let prevBlank = false;
+    for (const line of filtered) {
+      const isBlank = !line.trim();
+      if (isBlank && prevBlank) continue;
+      collapsed.push(line);
+      prevBlank = isBlank;
+    }
+
+    return collapsed.join("\n").trim();
+  }
+
   function setSubject(subject) {
     const next = normalizeSubject(subject);
     if (state.subject === next) return state.subject;
@@ -83,7 +139,10 @@
       throw new Error("notes 数据结构不正确：缺少 pages 数组");
     }
 
-    const pages = resolved.pages.slice().sort((a, b) => Number(a.page) - Number(b.page));
+    const pages = resolved.pages
+      .slice()
+      .sort((a, b) => Number(a.page) - Number(b.page))
+      .map((page) => ({ ...page, content: sanitizeContent(page.content) }));
     const maxPage = pages.length ? Number(pages[pages.length - 1].page) : 0;
     const totalPages = Number(resolved.totalPages || maxPage || pages.length || 0);
 

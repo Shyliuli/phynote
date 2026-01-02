@@ -306,6 +306,24 @@
       const t = line.trimEnd();
       const trimmed = t.trim();
 
+      const imgMatch = trimmed.match(/^!\[(.*)\]\((.*)\)\s*$/);
+      if (imgMatch) {
+        const alt = imgMatch[1] || "";
+        const src = imgMatch[2] || "";
+        const safeSrc = /^(https?:)?\/\/|^\.\.?\//.test(src) || !/:/.test(src) ? src : "";
+        if (safeSrc) {
+          out.push(
+            `<div class="md-image"><img src="${escapeHtml(safeSrc)}" alt="${escapeHtml(
+              alt,
+            )}" loading="lazy" /></div>`,
+          );
+        } else {
+          out.push(`<p>${renderInline(trimmed)}</p>`);
+        }
+        i += 1;
+        continue;
+      }
+
       if (trimmed.startsWith("```")) {
         if (inFence) {
           inFence = false;

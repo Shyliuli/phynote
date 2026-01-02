@@ -38,9 +38,9 @@
       "difficulty": "简单",
       "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp006"
+        "kp002"
       ],
-      "sourcePage": 6,
+      "sourcePage": 2,
       "content": "格雷码的相邻码字只相差 ____ 位。",
       "answer": "1",
       "explanation": "格雷码的核心特性是相邻码仅有一位不同。"
@@ -70,9 +70,9 @@
       "difficulty": "简单",
       "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp008"
+        "kp002"
       ],
-      "sourcePage": 8,
+      "sourcePage": 2,
       "content": "异或运算的输出为 1 的条件是：",
       "options": [
         "A. 两个输入相同",
@@ -100,11 +100,11 @@
       "id": "qdc007",
       "type": "选择题",
       "difficulty": "简单",
-      "chapterId": "ch002",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp011"
+        "kp002"
       ],
-      "sourcePage": 11,
+      "sourcePage": 2,
       "content": "与非门（NAND）的输出为 0 的条件是：",
       "options": [
         "A. 任意一个输入为 0",
@@ -119,11 +119,11 @@
       "id": "qdc008",
       "type": "判断题",
       "difficulty": "简单",
-      "chapterId": "ch002",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp011"
+        "kp002"
       ],
-      "sourcePage": 11,
+      "sourcePage": 2,
       "content": "与非门和或非门都是通用门。",
       "answer": "对",
       "explanation": "NAND 和 NOR 都可以实现任意逻辑功能。"
@@ -132,11 +132,11 @@
       "id": "qdc009",
       "type": "填空题",
       "difficulty": "中等",
-      "chapterId": "ch002",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp011"
+        "kp002"
       ],
-      "sourcePage": 11,
+      "sourcePage": 2,
       "content": "三态门的第三种输出状态是 ____ 状态。",
       "answer": "高阻",
       "explanation": "三态门输出除了 0/1 还可进入高阻态。"
@@ -145,11 +145,11 @@
       "id": "qdc010",
       "type": "多选题",
       "difficulty": "中等",
-      "chapterId": "ch002",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp010"
+        "kp002"
       ],
-      "sourcePage": 10,
+      "sourcePage": 2,
       "content": "以下哪些属于基本逻辑门？",
       "options": [
         "A. 与门",
@@ -164,11 +164,11 @@
       "id": "qdc011",
       "type": "填空题",
       "difficulty": "中等",
-      "chapterId": "ch002",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp018"
+        "kp002"
       ],
-      "sourcePage": 18,
+      "sourcePage": 2,
       "content": "OC 门输出要获得高电平通常需要外接 ____。",
       "answer": "上拉电阻",
       "explanation": "开集电极输出本身不能拉高，需要上拉电阻提供高电平。"
@@ -179,9 +179,9 @@
       "difficulty": "简单",
       "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp008"
+        "kp002"
       ],
-      "sourcePage": 8,
+      "sourcePage": 2,
       "content": "异或运算满足 A ⊕ A = 1。",
       "answer": "错",
       "explanation": "A ⊕ A 恒为 0。"
@@ -190,11 +190,11 @@
       "id": "qdc013",
       "type": "选择题",
       "difficulty": "简单",
-      "chapterId": "ch003",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp026"
+        "kp004"
       ],
-      "sourcePage": 26,
+      "sourcePage": 4,
       "content": "布尔代数中，A + A' 的结果为：",
       "options": [
         "A. 0",
@@ -209,11 +209,11 @@
       "id": "qdc014",
       "type": "判断题",
       "difficulty": "简单",
-      "chapterId": "ch003",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp027"
+        "kp004"
       ],
-      "sourcePage": 27,
+      "sourcePage": 4,
       "content": "卡诺图化简时可以利用无关项进行进一步化简。",
       "answer": "对",
       "explanation": "无关项可视作 0 或 1 以获得更简洁表达式。"
@@ -222,11 +222,11 @@
       "id": "qdc015",
       "type": "填空题",
       "difficulty": "简单",
-      "chapterId": "ch003",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp026"
+        "kp004"
       ],
-      "sourcePage": 26,
+      "sourcePage": 4,
       "content": "布尔代数中 A · 1 = ____。",
       "answer": "A",
       "explanation": "同一律：A·1=A。"
@@ -235,11 +235,11 @@
       "id": "qdc016",
       "type": "多选题",
       "difficulty": "中等",
-      "chapterId": "ch003",
+      "chapterId": "ch001",
       "knowledgePointIds": [
-        "kp026"
+        "kp004"
       ],
-      "sourcePage": 26,
+      "sourcePage": 4,
       "content": "以下哪些属于布尔代数的基本定律？",
       "options": [
         "A. 交换律",
@@ -254,11 +254,11 @@
       "id": "qdc017",
       "type": "选择题",
       "difficulty": "简单",
-      "chapterId": "ch004",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp050"
+        "kp012"
       ],
-      "sourcePage": 50,
+      "sourcePage": 12,
       "content": "n 输入译码器的输出线数为：",
       "options": [
         "A. n",
@@ -273,11 +273,11 @@
       "id": "qdc018",
       "type": "判断题",
       "difficulty": "简单",
-      "chapterId": "ch004",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp050"
+        "kp012"
       ],
-      "sourcePage": 50,
+      "sourcePage": 12,
       "content": "8 选 1 数据选择器需要 3 根选择线。",
       "answer": "对",
       "explanation": "8=2^3，需要 3 位选择信号。"
@@ -286,11 +286,11 @@
       "id": "qdc019",
       "type": "填空题",
       "difficulty": "简单",
-      "chapterId": "ch004",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp050"
+        "kp012"
       ],
-      "sourcePage": 50,
+      "sourcePage": 12,
       "content": "全加器的两个输出分别为和与 ____。",
       "answer": "进位",
       "explanation": "全加器输出为 Sum 与 Carry。"
@@ -299,11 +299,11 @@
       "id": "qdc020",
       "type": "多选题",
       "difficulty": "中等",
-      "chapterId": "ch004",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp050"
+        "kp012"
       ],
-      "sourcePage": 50,
+      "sourcePage": 12,
       "content": "以下哪些属于常用的组合逻辑部件？",
       "options": [
         "A. 编码器",
@@ -318,11 +318,11 @@
       "id": "qdc021",
       "type": "选择题",
       "difficulty": "中等",
-      "chapterId": "ch004",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp050"
+        "kp012"
       ],
-      "sourcePage": 50,
+      "sourcePage": 12,
       "content": "优先编码器的特点是：",
       "options": [
         "A. 只允许单个输入为 1",
@@ -337,11 +337,11 @@
       "id": "qdc022",
       "type": "判断题",
       "difficulty": "简单",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp097"
+        "kp016"
       ],
-      "sourcePage": 97,
+      "sourcePage": 16,
       "content": "JK 触发器在 J=K=1 时输出翻转。",
       "answer": "对",
       "explanation": "JK 触发器的翻转特性来自 J=K=1。"
@@ -350,11 +350,11 @@
       "id": "qdc023",
       "type": "选择题",
       "difficulty": "简单",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp090"
+        "kp016"
       ],
-      "sourcePage": 90,
+      "sourcePage": 16,
       "content": "D 触发器在有效触发沿到来时，下一状态 Q+ 等于：",
       "options": [
         "A. J",
@@ -369,11 +369,11 @@
       "id": "qdc024",
       "type": "填空题",
       "difficulty": "简单",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp093"
+        "kp016"
       ],
-      "sourcePage": 93,
+      "sourcePage": 16,
       "content": "T 触发器的特性是每次触发输出都会 ____。",
       "answer": "翻转",
       "explanation": "T 触发器每次有效触发都会翻转。"
@@ -382,11 +382,11 @@
       "id": "qdc025",
       "type": "多选题",
       "difficulty": "简单",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp077"
+        "kp015"
       ],
-      "sourcePage": 77,
+      "sourcePage": 15,
       "content": "以下哪些是常见的触发器类型？",
       "options": [
         "A. SR 触发器",
@@ -401,11 +401,11 @@
       "id": "qdc026",
       "type": "选择题",
       "difficulty": "中等",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp080"
+        "kp016"
       ],
-      "sourcePage": 80,
+      "sourcePage": 16,
       "content": "同步时序电路的特点是各触发器：",
       "options": [
         "A. 时钟信号各不相同",
@@ -420,11 +420,11 @@
       "id": "qdc027",
       "type": "判断题",
       "difficulty": "中等",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp082"
+        "kp016"
       ],
-      "sourcePage": 82,
+      "sourcePage": 16,
       "content": "异步计数器的各级触发器时钟来自前一级输出，因此存在累积延迟。",
       "answer": "对",
       "explanation": "异步（脉动）计数器逐级触发，延迟会累积。"
@@ -433,11 +433,11 @@
       "id": "qdc028",
       "type": "填空题",
       "difficulty": "中等",
-      "chapterId": "ch005",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp082"
+        "kp016"
       ],
-      "sourcePage": 82,
+      "sourcePage": 16,
       "content": "计数器在系统中常用于实现 ____ 分频。",
       "answer": "频率",
       "explanation": "计数器可以对时钟进行分频。"
@@ -446,11 +446,11 @@
       "id": "qdc029",
       "type": "判断题",
       "difficulty": "简单",
-      "chapterId": "ch006",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp106"
+        "kp016"
       ],
-      "sourcePage": 106,
+      "sourcePage": 16,
       "content": "移位寄存器可用于串行与并行数据的转换。",
       "answer": "对",
       "explanation": "移位寄存器能实现串并转换。"
@@ -459,11 +459,11 @@
       "id": "qdc030",
       "type": "填空题",
       "difficulty": "中等",
-      "chapterId": "ch006",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp106"
+        "kp016"
       ],
-      "sourcePage": 106,
+      "sourcePage": 16,
       "content": "将串行数据转换为并行数据的过程通常称为 ____ 转换。",
       "answer": "串并",
       "explanation": "串行到并行简称串并转换。"
@@ -472,11 +472,11 @@
       "id": "qdc031",
       "type": "选择题",
       "difficulty": "中等",
-      "chapterId": "ch006",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp106"
+        "kp016"
       ],
-      "sourcePage": 106,
+      "sourcePage": 16,
       "content": "时序电路的分析常用的表示方法是：",
       "options": [
         "A. 状态转移表/状态图",
@@ -491,11 +491,11 @@
       "id": "qdc032",
       "type": "多选题",
       "difficulty": "中等",
-      "chapterId": "ch006",
+      "chapterId": "ch002",
       "knowledgePointIds": [
-        "kp106"
+        "kp016"
       ],
-      "sourcePage": 106,
+      "sourcePage": 16,
       "content": "以下哪些属于时序电路的典型功能？",
       "options": [
         "A. 计数",
@@ -505,6 +505,147 @@
       ],
       "answer": "ABC",
       "explanation": "时序电路常用于计数、存储、序列发生等功能。"
+    },
+    {
+      "id": "qdc033",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "奇校验码要求数据位与校验位中“1”的个数为：",
+      "options": [
+        "A. 偶数",
+        "B. 奇数",
+        "C. 任意",
+        "D. 与数据位长度相同"
+      ],
+      "answer": "B",
+      "explanation": "奇校验要求包含校验位在内的“1”总数为奇数。"
+    },
+    {
+      "id": "qdc034",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "偶校验码在接收端检测到“1”的个数为奇数时判定出错。",
+      "answer": "对",
+      "explanation": "偶校验要求“1”的个数为偶数，出现奇数则说明传输出错。"
+    },
+    {
+      "id": "qdc035",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "异或运算中，奇数个 1 相异或的结果为 ____。",
+      "answer": "1",
+      "explanation": "异或的奇偶特性决定奇数个 1 异或结果为 1。"
+    },
+    {
+      "id": "qdc036",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp002"
+      ],
+      "sourcePage": 2,
+      "content": "三态门处于高阻态时，输出端等效为：",
+      "options": [
+        "A. 逻辑 1",
+        "B. 逻辑 0",
+        "C. 断开/悬空",
+        "D. 反相输出"
+      ],
+      "answer": "C",
+      "explanation": "高阻态相当于与总线断开，不影响其他电路。"
+    },
+    {
+      "id": "qdc037",
+      "type": "选择题",
+      "difficulty": "简单",
+      "chapterId": "ch001",
+      "knowledgePointIds": [
+        "kp004"
+      ],
+      "sourcePage": 4,
+      "content": "根据摩根律，(A·B)' 等价于：",
+      "options": [
+        "A. A' + B'",
+        "B. A'·B'",
+        "C. A + B",
+        "D. (A + B)'"
+      ],
+      "answer": "A",
+      "explanation": "摩根律：乘积取反等于各变量取反后求和。"
+    },
+    {
+      "id": "qdc038",
+      "type": "填空题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp006"
+      ],
+      "sourcePage": 6,
+      "content": "卡诺图的编号通常采用 ____ 码，以保证相邻格只差一位。",
+      "answer": "格雷",
+      "explanation": "卡诺图按格雷码排列，保证几何相邻对应逻辑相邻。"
+    },
+    {
+      "id": "qdc039",
+      "type": "多选题",
+      "difficulty": "中等",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp012"
+      ],
+      "sourcePage": 12,
+      "content": "关于译码器的描述正确的是：",
+      "options": [
+        "A. n 输入译码器有 2^n 个输出",
+        "B. 译码器输出通常为独热码",
+        "C. 译码器属于时序逻辑电路",
+        "D. 译码器常用于地址译码"
+      ],
+      "answer": "ABD",
+      "explanation": "译码器是组合逻辑电路，输出独热码并常用于地址译码。"
+    },
+    {
+      "id": "qdc040",
+      "type": "填空题",
+      "difficulty": "简单",
+      "chapterId": "ch002",
+      "knowledgePointIds": [
+        "kp016"
+      ],
+      "sourcePage": 16,
+      "content": "JK 触发器在 J=K=0 时，输出 Q 保持 ____。",
+      "answer": "原状态",
+      "explanation": "J=K=0 时不触发翻转，输出保持不变。"
+    },
+    {
+      "id": "qdc041",
+      "type": "判断题",
+      "difficulty": "简单",
+      "chapterId": "ch003",
+      "knowledgePointIds": [
+        "kp018"
+      ],
+      "sourcePage": 18,
+      "content": "无符号二进制数左移一位等价于乘 2。",
+      "answer": "对",
+      "explanation": "左移一位相当于乘 2（不考虑溢出）。"
     }
   ]
 }

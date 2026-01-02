@@ -655,6 +655,10 @@ textarea {
   margin: 14px 0 0;
 }
 
+.notes-content .md {
+  white-space: normal;
+}
+
 .notes-footer {
   margin-top: 16px;
   text-align: center;
@@ -757,6 +761,20 @@ textarea {
 .md-table th {
   background: rgba(16, 24, 40, 0.04);
   font-weight: 800;
+}
+
+.md-image {
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.md-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 24, 40, 0.12);
+  background: #fff;
 }
 
 .math {
